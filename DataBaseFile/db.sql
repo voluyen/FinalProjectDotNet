@@ -15,13 +15,14 @@
 -- Sc... SQLINES DEMO ***
 -- SQLINES DEMO *** ------------------------------------
 USE master;
-
+go
 IF NOT EXISTS (SELECT 1 FROM sys.databases WHERE name = 'mydb')
 BEGIN
     CREATE DATABASE mydb;
 END;
-
+go
 USE mydb;
+go
 
 -- SQLINES DEMO *** ------------------------------------
 -- SQLINES DEMO *** egorys`
@@ -33,7 +34,7 @@ CREATE TABLE dbo.Categorys (
   PRIMARY KEY (id)
 );
 
-
+go
 -- SQLINES DEMO *** ------------------------------------
 -- SQLINES DEMO *** ruiters`
 -- SQLINES DEMO *** ------------------------------------
@@ -47,7 +48,7 @@ CREATE TABLE dbo.Recruiters (
   PRIMARY KEY (id),
   CONSTRAINT email_UNIQUE UNIQUE (email ASC)
 );
-
+go
 
 -- SQLINES DEMO *** ------------------------------------
 -- Ta... SQLINES DEMO ***
@@ -74,7 +75,7 @@ CREATE TABLE dbo.Jobs (
     ON UPDATE NO ACTION
 );
 
-
+go
 -- SQLINES DEMO *** ------------------------------------
 -- SQLINES DEMO *** didates`
 -- SQLINES DEMO *** ------------------------------------
@@ -92,7 +93,7 @@ CREATE TABLE dbo.Candidates (
   CONSTRAINT phone_unique_constraint UNIQUE (phone ASC)
 );
 
-
+go
 -- SQLINES DEMO *** ------------------------------------
 -- SQLINES DEMO *** lications`
 -- SQLINES DEMO *** ------------------------------------
@@ -113,10 +114,38 @@ CREATE TABLE dbo.Applications (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION
 );
+GO
+/****** Object:  Table [dbo].[menu]    Script Date: 02/04/2018 3:55:37 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[menu](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[name] [nvarchar](50) NULL,
+	[link] [nvarchar](max) NULL,
+	[meta] [nvarchar](50) NULL,
+	[hide] [bit] NULL,
+	[order] [int] NULL,
+	[datebegin] [smalldatetime] NULL,
+ CONSTRAINT [PK_menu] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+go
 CREATE INDEX job_idx ON dbo.Applications (job_id ASC);
 CREATE INDEX candidate_idx ON dbo.Applications (candidate_id ASC);
 
-
+go
 /* SET SQL_MODE=@OLD_SQL_MODE; */
 /* SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS; */
 /* SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS; */
+
+
+INSERT [dbo].[menu] ([id], [name], [link], [meta], [hide], [order], [datebegin]) VALUES (1, N'Home', NULL, N'home', 1, 2, CAST(N'2018-03-09 00:00:00' AS SmallDateTime))
+INSERT [dbo].[menu] ([id], [name], [link], [meta], [hide], [order], [datebegin]) VALUES (2, N'Service', NULL, N'services', 1, 3, CAST(N'2018-03-09 00:00:00' AS SmallDateTime))
+INSERT [dbo].[menu] ([id], [name], [link], [meta], [hide], [order], [datebegin]) VALUES (3, N'Job', NULL, N'jobs', 1, 4, CAST(N'2018-03-09 00:00:00' AS SmallDateTime))
+INSERT [dbo].[menu] ([id], [name], [link], [meta], [hide], [order], [datebegin]) VALUES (4, N'Events', NULL, N'events', 1, 5, CAST(N'2018-03-09 00:00:00' AS SmallDateTime))
+INSERT [dbo].[menu] ([id], [name], [link], [meta], [hide], [order], [datebegin]) VALUES (5, N'Professional', NULL, N'professional', 1, 6, CAST(N'2018-03-09 00:00:00' AS SmallDateTime))
+INSERT [dbo].[menu] ([id], [name], [link], [meta], [hide], [order], [datebegin]) VALUES (6, N'Contact', NULL, N'contact', 1, 7, CAST(N'2018-03-09 00:00:00' AS SmallDateTime))

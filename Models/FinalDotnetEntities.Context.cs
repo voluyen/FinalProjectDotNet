@@ -13,10 +13,10 @@ namespace FinalDotnet.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class mydbEntities : DbContext
+    public partial class MyDatabaseEntities : DbContext
     {
-        public mydbEntities()
-            : base("name=mydbEntities")
+        public MyDatabaseEntities()
+            : base("name=MyDatabaseEntities")
         {
         }
     
@@ -30,6 +30,6 @@ namespace FinalDotnet.Models
         public virtual DbSet<Category> Categorys { get; set; }
         public virtual DbSet<Job> Jobs { get; set; }
         public virtual DbSet<Recruiter> Recruiters { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<Menu> Menus { get; set; }
     }
 }
