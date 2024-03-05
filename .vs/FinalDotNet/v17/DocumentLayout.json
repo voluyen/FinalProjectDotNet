@@ -1,0 +1,228 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Code\\dotNet\\FinalOnPC\\FinalDotNet\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CBE17130-770E-4600-9B46-532ABC6717B3}|FinalDotNet.csproj|e:\\code\\dotnet\\finalonpc\\finaldotnet\\views\\shared\\_mylayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CBE17130-770E-4600-9B46-532ABC6717B3}|FinalDotNet.csproj|solutionrelative:views\\shared\\_mylayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBE17130-770E-4600-9B46-532ABC6717B3}|FinalDotNet.csproj|e:\\code\\dotnet\\finalonpc\\finaldotnet\\views\\default\\events.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CBE17130-770E-4600-9B46-532ABC6717B3}|FinalDotNet.csproj|solutionrelative:views\\default\\events.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBE17130-770E-4600-9B46-532ABC6717B3}|FinalDotNet.csproj|e:\\code\\dotnet\\finalonpc\\finaldotnet\\views\\default\\contact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CBE17130-770E-4600-9B46-532ABC6717B3}|FinalDotNet.csproj|solutionrelative:views\\default\\contact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBE17130-770E-4600-9B46-532ABC6717B3}|FinalDotNet.csproj|e:\\code\\dotnet\\finalonpc\\finaldotnet\\views\\default\\job.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CBE17130-770E-4600-9B46-532ABC6717B3}|FinalDotNet.csproj|solutionrelative:views\\default\\job.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBE17130-770E-4600-9B46-532ABC6717B3}|FinalDotNet.csproj|e:\\code\\dotnet\\finalonpc\\finaldotnet\\views\\default\\professionals.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CBE17130-770E-4600-9B46-532ABC6717B3}|FinalDotNet.csproj|solutionrelative:views\\default\\professionals.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBE17130-770E-4600-9B46-532ABC6717B3}|FinalDotNet.csproj|e:\\code\\dotnet\\finalonpc\\finaldotnet\\views\\default\\service.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CBE17130-770E-4600-9B46-532ABC6717B3}|FinalDotNet.csproj|solutionrelative:views\\default\\service.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBE17130-770E-4600-9B46-532ABC6717B3}|FinalDotNet.csproj|e:\\code\\dotnet\\finalonpc\\finaldotnet\\views\\default\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CBE17130-770E-4600-9B46-532ABC6717B3}|FinalDotNet.csproj|solutionrelative:views\\default\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBE17130-770E-4600-9B46-532ABC6717B3}|FinalDotNet.csproj|e:\\code\\dotnet\\finalonpc\\finaldotnet\\content\\css\\bootstrap.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{CBE17130-770E-4600-9B46-532ABC6717B3}|FinalDotNet.csproj|solutionrelative:content\\css\\bootstrap.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBE17130-770E-4600-9B46-532ABC6717B3}|FinalDotNet.csproj|e:\\code\\dotnet\\finalonpc\\finaldotnet\\content\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{CBE17130-770E-4600-9B46-532ABC6717B3}|FinalDotNet.csproj|solutionrelative:content\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBE17130-770E-4600-9B46-532ABC6717B3}|FinalDotNet.csproj|e:\\code\\dotnet\\finalonpc\\finaldotnet\\controllers\\defaultcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBE17130-770E-4600-9B46-532ABC6717B3}|FinalDotNet.csproj|solutionrelative:controllers\\defaultcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBE17130-770E-4600-9B46-532ABC6717B3}|FinalDotNet.csproj|e:\\code\\dotnet\\finalonpc\\finaldotnet\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBE17130-770E-4600-9B46-532ABC6717B3}|FinalDotNet.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBE17130-770E-4600-9B46-532ABC6717B3}|FinalDotNet.csproj|e:\\code\\dotnet\\finalonpc\\finaldotnet\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CBE17130-770E-4600-9B46-532ABC6717B3}|FinalDotNet.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 325,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Professionals.cshtml",
+              "DocumentMoniker": "E:\\Code\\dotNet\\FinalOnPC\\FinalDotNet\\Views\\Default\\Professionals.cshtml",
+              "RelativeDocumentMoniker": "Views\\Default\\Professionals.cshtml",
+              "ToolTip": "E:\\Code\\dotNet\\FinalOnPC\\FinalDotNet\\Views\\Default\\Professionals.cshtml",
+              "RelativeToolTip": "Views\\Default\\Professionals.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAB/AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-04T10:26:25.304Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Events.cshtml",
+              "DocumentMoniker": "E:\\Code\\dotNet\\FinalOnPC\\FinalDotNet\\Views\\Default\\Events.cshtml",
+              "RelativeDocumentMoniker": "Views\\Default\\Events.cshtml",
+              "ToolTip": "E:\\Code\\dotNet\\FinalOnPC\\FinalDotNet\\Views\\Default\\Events.cshtml",
+              "RelativeToolTip": "Views\\Default\\Events.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-04T10:25:12.097Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Job.cshtml",
+              "DocumentMoniker": "E:\\Code\\dotNet\\FinalOnPC\\FinalDotNet\\Views\\Default\\Job.cshtml",
+              "RelativeDocumentMoniker": "Views\\Default\\Job.cshtml",
+              "ToolTip": "E:\\Code\\dotNet\\FinalOnPC\\FinalDotNet\\Views\\Default\\Job.cshtml",
+              "RelativeToolTip": "Views\\Default\\Job.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAB/AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-04T10:23:27.396Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\Code\\dotNet\\FinalOnPC\\FinalDotNet\\Views\\Default\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Default\\Index.cshtml",
+              "ToolTip": "E:\\Code\\dotNet\\FinalOnPC\\FinalDotNet\\Views\\Default\\Index.cshtml",
+              "RelativeToolTip": "Views\\Default\\Index.cshtml",
+              "ViewState": "AQIAACAAAAAAAAAAAAAIwCoAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-04T10:20:49.876Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "style.css",
+              "DocumentMoniker": "E:\\Code\\dotNet\\FinalOnPC\\FinalDotNet\\Content\\css\\style.css",
+              "RelativeDocumentMoniker": "Content\\css\\style.css",
+              "ToolTip": "E:\\Code\\dotNet\\FinalOnPC\\FinalDotNet\\Content\\css\\style.css",
+              "RelativeToolTip": "Content\\css\\style.css",
+              "ViewState": "AQIAAIQCAAAAAAAAAAAmwKICAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-03-04T10:07:01.34Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "E:\\Code\\dotNet\\FinalOnPC\\FinalDotNet\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "E:\\Code\\dotNet\\FinalOnPC\\FinalDotNet\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-04T09:20:01.128Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "DefaultController.cs",
+              "DocumentMoniker": "E:\\Code\\dotNet\\FinalOnPC\\FinalDotNet\\Controllers\\DefaultController.cs",
+              "RelativeDocumentMoniker": "Controllers\\DefaultController.cs",
+              "ToolTip": "E:\\Code\\dotNet\\FinalOnPC\\FinalDotNet\\Controllers\\DefaultController.cs",
+              "RelativeToolTip": "Controllers\\DefaultController.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAgwCcAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-04T09:19:48.74Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_MyLayout.cshtml",
+              "DocumentMoniker": "E:\\Code\\dotNet\\FinalOnPC\\FinalDotNet\\Views\\Shared\\_MyLayout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_MyLayout.cshtml",
+              "ToolTip": "E:\\Code\\dotNet\\FinalOnPC\\FinalDotNet\\Views\\Shared\\_MyLayout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_MyLayout.cshtml",
+              "ViewState": "AQIAAKIAAAAAAAAAAAAAALQAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-04T09:05:09.484Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Contact.cshtml",
+              "DocumentMoniker": "E:\\Code\\dotNet\\FinalOnPC\\FinalDotNet\\Views\\Default\\Contact.cshtml",
+              "RelativeDocumentMoniker": "Views\\Default\\Contact.cshtml",
+              "ToolTip": "E:\\Code\\dotNet\\FinalOnPC\\FinalDotNet\\Views\\Default\\Contact.cshtml",
+              "RelativeToolTip": "Views\\Default\\Contact.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAB/AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-04T10:27:13.609Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Service.cshtml",
+              "DocumentMoniker": "E:\\Code\\dotNet\\FinalOnPC\\FinalDotNet\\Views\\Default\\Service.cshtml",
+              "RelativeDocumentMoniker": "Views\\Default\\Service.cshtml",
+              "ToolTip": "E:\\Code\\dotNet\\FinalOnPC\\FinalDotNet\\Views\\Default\\Service.cshtml",
+              "RelativeToolTip": "Views\\Default\\Service.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-04T09:21:24.041Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "bootstrap.css",
+              "DocumentMoniker": "E:\\Code\\dotNet\\FinalOnPC\\FinalDotNet\\Content\\css\\bootstrap.css",
+              "RelativeDocumentMoniker": "Content\\css\\bootstrap.css",
+              "ToolTip": "E:\\Code\\dotNet\\FinalOnPC\\FinalDotNet\\Content\\css\\bootstrap.css",
+              "RelativeToolTip": "Content\\css\\bootstrap.css",
+              "ViewState": "AQIAAGENAAAAAAAAAAAmwGgNAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-03-04T10:14:20.449Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "E:\\Code\\dotNet\\FinalOnPC\\FinalDotNet\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "E:\\Code\\dotNet\\FinalOnPC\\FinalDotNet\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-04T09:03:15.486Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
