@@ -3,28 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using FinalProjectDotNet.Models.EF;
 
 namespace FinalProjectDotNet.Controllers
 {
 	public class HomeController : Controller
 	{
+		public HRAgencyDbContext db = new HRAgencyDbContext();
 		public ActionResult Index()
 		{
 			return View();
 		}
 
-		public ActionResult About()
+		public ActionResult getMenu()
 		{
-			ViewBag.Message = "Your application description page.";
+			var v = from t in db.Menus
+					where t.hide == false
+					orderby t.order
+					select t;
 
-			return View();
-		}
-
-		public ActionResult Contact()
-		{
-			ViewBag.Message = "Your contact page.";
-
-			return View();
+			return PartialView(v.ToList());
 		}
 	}
 }
