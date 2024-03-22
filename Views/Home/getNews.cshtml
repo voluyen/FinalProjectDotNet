@@ -1,0 +1,12 @@
+﻿@model List<FinalProjectDotNet.Models.EF.News>
+
+<h3>Latest News</h3>
+<ul class="footer_grid_list">
+    @foreach(var i in Model)
+	{
+        <li>
+            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+            <a href="@i.link"> @i.content</a>
+        </li>
+	}
+</ul>

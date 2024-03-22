@@ -1,0 +1,12 @@
+﻿@model List<FinalProjectDotNet.Models.EF.Follow>
+
+<h6>Follow Us</h6>
+<div class="social">
+    <ul>
+        @foreach (var i in Model)
+        {
+            <li><a href="@i.link"><img src="@i.icon" alt="@i.type" style="width:42px;height:42px;"></a></li>
+        }
+    </ul>
+</div>
+

@@ -261,9 +261,12 @@
     <Compile Include="Models\EF\Application.cs" />
     <Compile Include="Models\EF\Candidate.cs" />
     <Compile Include="Models\EF\Category.cs" />
-    <Compile Include="Models\EF\HRAgencyDbContext.cs" />
+    <Compile Include="Models\EF\Contact.cs" />
+    <Compile Include="Models\EF\Follow.cs" />
     <Compile Include="Models\EF\Job.cs" />
     <Compile Include="Models\EF\Menu.cs" />
+    <Compile Include="Models\EF\HRAgencyDbContext.cs" />
+    <Compile Include="Models\EF\News.cs" />
     <Compile Include="Models\EF\Recruiter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -274,6 +277,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\style.css" />
+    <Content Include="Database\db.sql" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -306,6 +310,9 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_MyLayout.cshtml" />
     <Content Include="Views\Home\getMenu.cshtml" />
+    <Content Include="Views\Home\getNews.cshtml" />
+    <Content Include="Views\Home\getContact.cshtml" />
+    <Content Include="Views\Home\getFollow.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

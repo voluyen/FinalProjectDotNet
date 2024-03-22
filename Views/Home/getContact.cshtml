@@ -1,0 +1,10 @@
+﻿@model List<FinalProjectDotNet.Models.EF.Contact>
+
+<h3>Contact Info</h3>
+<ul class="address">
+    @foreach (var i in Model)
+    {
+        <li><i class="@i.icon" aria-hidden="true"></i> @i.info </li>
+    }
+</ul>
+

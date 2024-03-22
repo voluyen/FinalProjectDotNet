@@ -8,15 +8,18 @@ namespace FinalProjectDotNet.Models.EF
 	public partial class HRAgencyDbContext : DbContext
 	{
 		public HRAgencyDbContext()
-			: base("name=HRAgencyDbContext1")
+			: base("name=HRAgencyDbContext")
 		{
 		}
 
 		public virtual DbSet<Application> Applications { get; set; }
 		public virtual DbSet<Candidate> Candidates { get; set; }
 		public virtual DbSet<Category> Categorys { get; set; }
+		public virtual DbSet<Contact> Contacts { get; set; }
+		public virtual DbSet<Follow> Follows { get; set; }
 		public virtual DbSet<Job> Jobs { get; set; }
 		public virtual DbSet<Menu> Menus { get; set; }
+		public virtual DbSet<News> News { get; set; }
 		public virtual DbSet<Recruiter> Recruiters { get; set; }
 
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
