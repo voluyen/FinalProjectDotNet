@@ -1,0 +1,12 @@
+﻿
+@model List<FinalProjectDotNet.Models.EF.Category>
+<div class="col_3 permit">
+    <h3>Jobs by Category</h3>
+    <ul class="list_2">
+        @foreach (var i in Model)
+        {
+            <li><a href="#">@i.name</a></li>
+        }
+    </ul>
+</div>
+

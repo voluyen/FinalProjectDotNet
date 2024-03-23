@@ -1,0 +1,35 @@
+﻿@model List<FinalProjectDotNet.Models.EF.Candidate>
+
+@foreach (var i in Model)
+{
+    <div class="tab_grid_prof">
+        <div class="col-sm-3 loc_1">
+            <a href="single.html"><img src="~/Content/images/pf1.jpg" alt=""></a>
+        </div>
+        <div class="col-sm-9">
+            <div class="location_box1">
+                <h6>@i.name</h6>
+                <span class="m_2_prof">@i.resume</span>
+                <div class="person-info">
+                    <ul>
+
+                        <li><span>Emp.Status</span>: Employed</li>
+                        <li><span>Skill</span>: @i.skills</li>
+                        <li><span>Gender</span>: Male</li>
+                        <li><span>Location</span>: Jackson, 538, USA</li>
+                        <li><span>Experience</span>: @i.experience</li>
+                        <li><span>Nationality</span>: Portuguse</li>
+                    </ul>
+                </div>
+                <div class="read"><a href="single.html" class="read-more"> More Info</a></div>
+                <ul class="top-btns">
+                    <li><a href="#" class="fa fa-plus toggle"></a></li>
+                    <li><a href="#" class="fa fa-star"></a></li>
+                    <li><a href="#" class="fa fa-link"></a></li>
+                </ul>
+
+            </div>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+}

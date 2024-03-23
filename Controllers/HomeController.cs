@@ -10,12 +10,12 @@ namespace FinalProjectDotNet.Controllers
 	public class HomeController : Controller
 	{
 		public HRAgencyDbContext db = new HRAgencyDbContext();
-		public ActionResult Index()
-		{
-			return View();
-		}
+        public ActionResult Index()
+        {
+            return View();
+        }
 
-		public ActionResult getMenu()
+        public ActionResult getMenu()
 		{
 			var v = from t in db.Menus
 					where t.hide == false
@@ -54,5 +54,6 @@ namespace FinalProjectDotNet.Controllers
 
 			return PartialView(v.ToList());
 		}
-	}
+
+    }
 }
