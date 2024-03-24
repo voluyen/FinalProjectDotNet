@@ -1,0 +1,44 @@
+﻿@model List<FinalProjectDotNet.Models.EF.Testimonial>
+
+<div class="testimonials_section">
+    <div class="container">
+        <div class="tittle_head_w3ls">
+            <h3 class="tittle">Testimonials</h3>
+        </div>
+        <div class="inner_sec_grids_info_w3ls">
+            <div id="Carousel" class="carousel slide two">
+
+                <ol class="carousel-indicators second">
+                    <li data-target="#Carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#Carousel" data-slide-to="1"></li>
+                    <li data-target="#Carousel" data-slide-to="2"></li>
+                </ol>
+
+                <!-- Carousel items -->
+                <div class="carousel-inner">
+                    @{var index = 0; }
+                    @foreach (var i in Model)
+                    {
+                        <div  class = "@(index == 0 ? "item active" : "item")">
+                            <div class="testimonials_grid_wthree">
+                                <img src = "@i.avatar" alt=" " class="img-responsive" />
+                                <h4>
+                                    <i class="fa fa-quote-left" aria-hidden="true"></i> 
+                                    @i.description
+                                </h4>
+                                <h5>@i.name</h5>
+
+                            </div>
+                        </div>
+                        <!--@(index++) -->
+                    }
+
+                </div>
+                <!--.carousel-inner-->
+
+            </div>
+            <!--.Carousel-->
+
+        </div>
+    </div>
+</div>

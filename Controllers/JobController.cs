@@ -18,5 +18,13 @@ namespace FinalProjectDotNet.Controllers
 
             return PartialView(v.ToList());
         }
+
+        public ActionResult getJob()
+        {
+            var v = from t in db.Jobs
+                    select t;
+
+            return PartialView(v.Take(10).ToList());
+        }
     }
 }

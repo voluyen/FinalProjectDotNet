@@ -19,6 +19,7 @@ namespace FinalProjectDotNet.Models.EF
 		public virtual DbSet<Candidate> Candidates { get; set; }
 		public virtual DbSet<Category> Categorys { get; set; }
 		public virtual DbSet<Contact> Contacts { get; set; }
+		public virtual DbSet<Event> Events { get; set; }
 		public virtual DbSet<Follow> Follows { get; set; }
 		public virtual DbSet<Job> Jobs { get; set; }
 		public virtual DbSet<Menu> Menus { get; set; }

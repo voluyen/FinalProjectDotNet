@@ -88,7 +88,11 @@ namespace FinalProjectDotNet.Controllers
 		public ActionResult getTestimonial()
 		{
 			var v = from t in db.Testimonials
+					where t.hide == false
+					orderby t.order
 					select t;
+
+			return PartialView(v.Take(3).ToList());
 		}
 
 	}

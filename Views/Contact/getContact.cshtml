@@ -1,0 +1,13 @@
+﻿@model List<FinalProjectDotNet.Models.EF.Contact>
+
+
+@foreach (var i in Model)
+{
+    <div class="mail-agileits-w3layouts">
+        <i class="fa @i.icon" aria-hidden="true"></i>
+        <div class="contact-right">
+            <p>@i.type </p><span>@i.info</span>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+}

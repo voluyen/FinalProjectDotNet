@@ -255,8 +255,10 @@
     <Compile Include="App_Start\BundleConfig2.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DataController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JobController.cs" />
     <Compile Include="Controllers\ProfessionalController.cs" />
@@ -270,6 +272,7 @@
     <Compile Include="Models\EF\Candidate.cs" />
     <Compile Include="Models\EF\Category.cs" />
     <Compile Include="Models\EF\Contact.cs" />
+    <Compile Include="Models\EF\Event.cs" />
     <Compile Include="Models\EF\Follow.cs" />
     <Compile Include="Models\EF\Job.cs" />
     <Compile Include="Models\EF\Menu.cs" />
@@ -335,6 +338,10 @@
     <Content Include="Views\Home\getBannerBottom.cshtml" />
     <Content Include="Views\Home\getService.cshtml" />
     <Content Include="Views\Home\getMidService.cshtml" />
+    <Content Include="Views\Home\getTestimonial.cshtml" />
+    <Content Include="Views\Event\getEvent.cshtml" />
+    <Content Include="Views\Contact\getContact.cshtml" />
+    <Content Include="Views\Job\getJob.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
