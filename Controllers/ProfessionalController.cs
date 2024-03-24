@@ -16,7 +16,7 @@ namespace FinalProjectDotNet.Controllers
             var v = from t in db.Candidates
                     select t;
 
-            return View("getCandidate", v.ToList());
+            return PartialView(v.ToList());
         }
     }
 }

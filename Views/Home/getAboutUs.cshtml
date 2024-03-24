@@ -1,0 +1,25 @@
+﻿@model FinalProjectDotNet.Models.EF.AboutU
+
+<div class="banner-bottom">
+    <div class="container">
+        <div class="tittle_head_w3ls">
+            <h3 class="tittle">About Us</h3>
+        </div>
+        <div class="inner_sec_grids_info_w3ls">
+            <div class="col-md-6 banner_bottom_left">
+                <h4> @Model.title</h4>
+                <p>
+                    @Html.Raw(Model.description)
+                </p>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="col-md-6 banner_bottom_right">
+                <div class="agileits_w3layouts_banner_bottom_grid">
+                    <img src="@Model.img" alt=" " class="img-responsive" />
+                </div>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+
+    </div>
+</div>

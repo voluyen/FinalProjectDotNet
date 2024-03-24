@@ -16,7 +16,7 @@ namespace FinalProjectDotNet.Controllers
             var v = from t in db.Categorys
                     select t;
 
-            return View("getRight_cate", v.ToList());
+            return PartialView(v.ToList());
         }
     }
 }

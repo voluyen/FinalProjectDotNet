@@ -263,16 +263,22 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\EF\AboutU.cs" />
     <Compile Include="Models\EF\Application.cs" />
+    <Compile Include="Models\EF\Banner.cs" />
+    <Compile Include="Models\EF\BannerBottom.cs" />
     <Compile Include="Models\EF\Candidate.cs" />
     <Compile Include="Models\EF\Category.cs" />
     <Compile Include="Models\EF\Contact.cs" />
     <Compile Include="Models\EF\Follow.cs" />
     <Compile Include="Models\EF\Job.cs" />
     <Compile Include="Models\EF\Menu.cs" />
+    <Compile Include="Models\EF\MidService.cs" />
     <Compile Include="Models\EF\HRAgencyDbContext.cs" />
     <Compile Include="Models\EF\News.cs" />
     <Compile Include="Models\EF\Recruiter.cs" />
+    <Compile Include="Models\EF\Service.cs" />
+    <Compile Include="Models\EF\Testimonial.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -318,14 +324,17 @@
     <Content Include="Views\Home\getContact.cshtml" />
     <Content Include="Views\Home\getFollow.cshtml" />
     <Content Include="Views\Default\Index.cshtml" />
-    <Content Include="Views\Default\Services.cshtml" />
     <Content Include="Views\Default\Professionals.cshtml" />
     <Content Include="Views\Default\Events.cshtml" />
     <Content Include="Views\Default\Contact.cshtml" />
     <Content Include="Views\Default\Jobs.cshtml" />
     <Content Include="Views\Default\Home.cshtml" />
-    <Content Include="Views\Job\getRight_cate.cshtml" />
     <Content Include="Views\Professional\getCandidate.cshtml" />
+    <Content Include="Views\Job\getCategory.cshtml" />
+    <Content Include="Views\Home\getAboutUs.cshtml" />
+    <Content Include="Views\Home\getBannerBottom.cshtml" />
+    <Content Include="Views\Home\getService.cshtml" />
+    <Content Include="Views\Home\getMidService.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

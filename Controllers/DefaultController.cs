@@ -13,10 +13,6 @@ namespace FinalProjectDotNet.Controllers
         {
             return View();
         }
-        public ActionResult Services()
-        {
-            return View();
-        }
         public ActionResult Jobs()
         {
             return View();

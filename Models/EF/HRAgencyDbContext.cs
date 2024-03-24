@@ -12,15 +12,21 @@ namespace FinalProjectDotNet.Models.EF
 		{
 		}
 
+		public virtual DbSet<AboutU> AboutUs { get; set; }
 		public virtual DbSet<Application> Applications { get; set; }
+		public virtual DbSet<BannerBottom> BannerBottoms { get; set; }
+		public virtual DbSet<Banner> Banners { get; set; }
 		public virtual DbSet<Candidate> Candidates { get; set; }
 		public virtual DbSet<Category> Categorys { get; set; }
 		public virtual DbSet<Contact> Contacts { get; set; }
 		public virtual DbSet<Follow> Follows { get; set; }
 		public virtual DbSet<Job> Jobs { get; set; }
 		public virtual DbSet<Menu> Menus { get; set; }
+		public virtual DbSet<MidService> MidServices { get; set; }
 		public virtual DbSet<News> News { get; set; }
 		public virtual DbSet<Recruiter> Recruiters { get; set; }
+		public virtual DbSet<Service> Services { get; set; }
+		public virtual DbSet<Testimonial> Testimonials { get; set; }
 
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
 		{

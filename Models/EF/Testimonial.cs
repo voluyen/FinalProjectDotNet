@@ -6,27 +6,21 @@ namespace FinalProjectDotNet.Models.EF
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Menu")]
-    public partial class Menu
+    public partial class Testimonial
     {
         public int id { get; set; }
 
         [Required]
-        [StringLength(50)]
         public string name { get; set; }
 
         [Required]
-        public string link { get; set; }
+        public string description { get; set; }
 
         [Required]
-        [StringLength(50)]
-        public string meta { get; set; }
-
-        public bool hide { get; set; }
+        public string avatar { get; set; }
 
         public int order { get; set; }
 
-        [Column(TypeName = "smalldatetime")]
-        public DateTime datebegin { get; set; }
+        public bool hide { get; set; }
     }
 }

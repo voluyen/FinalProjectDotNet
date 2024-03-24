@@ -1,0 +1,35 @@
+﻿@model List<FinalProjectDotNet.Models.EF.MidService>
+
+<div class="mid_services">
+    <div class="col-md-12 according_inner_grids">
+        <h3 class="agile_heading two">Receiving a Job offer</h3>
+        <div class="according_info">
+            <div class="panel-group about_panel" id="accordion" role="tablist" aria-multiselectable="true">
+                @foreach (var i in Model)
+                {
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="heading_@i.order">
+                            <h4 class="panel-title asd">
+                                <a class="pa_italic collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse_@i.order" aria-expanded="false"
+                                   aria-controls="collapse_@i.order">
+                                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span><i class="glyphicon glyphicon-minus" aria-hidden="true"></i>@i.title
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapse_@i.order" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading_@i.order">
+                            <div class="panel-body panel_text">
+                                @i.description
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            </div>
+        </div>
+
+    </div>
+    <div class="clearfix"> </div>
+</div>
+
+

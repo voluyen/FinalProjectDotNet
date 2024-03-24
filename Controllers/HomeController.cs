@@ -55,5 +55,41 @@ namespace FinalProjectDotNet.Controllers
 			return PartialView(v.ToList());
 		}
 
-    }
+		public ActionResult getAboutUs()
+		{
+			var v = db.AboutUs.FirstOrDefault();
+			return PartialView(v);
+		}
+
+		public ActionResult getBannerBottom()
+		{
+			var v = db.BannerBottoms.FirstOrDefault();
+			return PartialView(v);
+		}
+
+		public ActionResult getService()
+		{
+			var v = from t in db.Services
+					orderby t.order
+					select t;
+			return PartialView(v.ToList());
+		}
+
+		public ActionResult getMidService()
+		{
+			var v = from t in db.MidServices
+					where t.hide == false
+					orderby t.order
+					select t;
+
+			return PartialView(v.ToList());
+		}
+
+		public ActionResult getTestimonial()
+		{
+			var v = from t in db.Testimonials
+					select t;
+		}
+
+	}
 }
