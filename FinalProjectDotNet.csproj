@@ -255,6 +255,7 @@
     <Compile Include="App_Start\BundleConfig2.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\admin\adminAreaRegistration.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DataController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
@@ -300,6 +301,8 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config" />
     <Content Include="libman.json" />
+    <Content Include="Areas\admin\Views\web.config" />
+    <Content Include="Areas\admin\Views\Shared\_MyLayout.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -345,8 +348,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\admin\Controllers\" />
+    <Folder Include="Areas\admin\Data\" />
     <Folder Include="Data\" />
     <Folder Include="Models\DAO\" />
+    <Folder Include="Views\admin\" />
     <Folder Include="Views\Data\" />
   </ItemGroup>
   <ItemGroup>
