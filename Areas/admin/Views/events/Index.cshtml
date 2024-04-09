@@ -1,279 +1,64 @@
-﻿
+﻿@model IEnumerable<FinalProjectDotNet.Models.EF.Event>
+
 @{
-    ViewBag.Title = "Quản lý sự kiện";
+    ViewBag.Title = "Index";
     Layout = "~/Areas/admin/Views/Shared/_MyLayout.cshtml";
 }
 
-<!-- Content Wrapper -->
-<div id="content-wrapper" class="d-flex flex-column">
+<h2>Index</h2>
 
-    <!-- Main Content -->
-    <div id="content">
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.order)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hide)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.link)
+        </th>
+        <th></th>
+    </tr>
 
-        <!-- Begin Page Content -->
-        <div class="container-fluid">
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.order)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hide)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.link)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
 
-            <!-- Page Heading -->
-            <h1 class="h3 mb-2 text-gray-800">Tables</h1>
-            <p class="mb-4">
-                DataTables is a third party plugin that is used to generate the demo table below.
-                For more information about DataTables, please visit the <a target="_blank"
-                                                                           href="https://datatables.net">official DataTables documentation</a>.
-            </p>
-
-            <!-- DataTales Example -->
-            <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
-                </div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Position</th>
-                                    <th>Office</th>
-                                    <th>Age</th>
-                                    <th>Start date</th>
-                                    <th>Salary</th>
-                                    <th>Action</th>
-
-                                </tr>
-                            </thead>
-                            <tfoot>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Position</th>
-                                    <th>Office</th>
-                                    <th>Age</th>
-                                    <th>Start date</th>
-                                    <th>Salary</th>
-                                    <th>Action</th>
-                                </tr>
-                            </tfoot>
-                            <tbody>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
-                                    <td>$320,800</td>
-                                    <td>
-                                        @Html.ActionLink("Sửa", "Edit", "events") |
-                                        @Html.ActionLink("Chi tiết", "Detail", "events") |
-                                        @Html.ActionLink("Xóa", "Delete", "events")
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
-                                    <td>$320,800</td>
-                                    <td>
-                                        @Html.ActionLink("Sửa", "Edit", "events") |
-                                        @Html.ActionLink("Chi tiết", "Detail", "events") |
-                                        @Html.ActionLink("Xóa", "Delete", "events")
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
-                                    <td>$320,800</td>
-                                    <td>
-                                        @Html.ActionLink("Sửa", "Edit", "events") |
-                                        @Html.ActionLink("Chi tiết", "Detail", "events") |
-                                        @Html.ActionLink("Xóa", "Delete", "events")
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
-                                    <td>$320,800</td>
-                                    <td>
-                                        @Html.ActionLink("Sửa", "Edit", "events") |
-                                        @Html.ActionLink("Chi tiết", "Detail", "events") |
-                                        @Html.ActionLink("Xóa", "Delete", "events")
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
-                                    <td>$320,800</td>
-                                    <td>
-                                        @Html.ActionLink("Sửa", "Edit", "events") |
-                                        @Html.ActionLink("Chi tiết", "Detail", "events") |
-                                        @Html.ActionLink("Xóa", "Delete", "events")
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
-                                    <td>$320,800</td>
-                                    <td>
-                                        @Html.ActionLink("Sửa", "Edit", "events") |
-                                        @Html.ActionLink("Chi tiết", "Detail", "events") |
-                                        @Html.ActionLink("Xóa", "Delete", "events")
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
-                                    <td>$320,800</td>
-                                    <td>
-                                        @Html.ActionLink("Sửa", "Edit", "events") |
-                                        @Html.ActionLink("Chi tiết", "Detail", "events") |
-                                        @Html.ActionLink("Xóa", "Delete", "events")
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
-                                    <td>$320,800</td>
-                                    <td>
-                                        @Html.ActionLink("Sửa", "Edit", "events") |
-                                        @Html.ActionLink("Chi tiết", "Detail", "events") |
-                                        @Html.ActionLink("Xóa", "Delete", "events")
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
-                                    <td>$320,800</td>
-                                    <td>
-                                        @Html.ActionLink("Sửa", "Edit", "events") |
-                                        @Html.ActionLink("Chi tiết", "Detail", "events") |
-                                        @Html.ActionLink("Xóa", "Delete", "events")
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
-                                    <td>$320,800</td>
-                                    <td>
-                                        @Html.ActionLink("Sửa", "Edit", "events") |
-                                        @Html.ActionLink("Chi tiết", "Detail", "events") |
-                                        @Html.ActionLink("Xóa", "Delete", "events")
-                                    </td>
-                                </tr>
-                                v
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
-                                    <td>$320,800</td>
-                                    <td>
-                                        @Html.ActionLink("Sửa", "Edit", "events") |
-                                        @Html.ActionLink("Chi tiết", "Detail", "events") |
-                                        @Html.ActionLink("Xóa", "Delete", "events")
-                                    </td>
-                                </tr>
-                                v
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
-                                    <td>$320,800</td>
-                                    <td>
-                                        @Html.ActionLink("Sửa", "Edit", "events") |
-                                        @Html.ActionLink("Chi tiết", "Detail", "events") |
-                                        @Html.ActionLink("Xóa", "Delete", "events")
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
-                                    <td>$320,800</td>
-                                    <td>
-                                        @Html.ActionLink("Sửa", "Edit", "events") |
-                                        @Html.ActionLink("Chi tiết", "Detail", "events") |
-                                        @Html.ActionLink("Xóa", "Delete", "events")
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
-                                    <td>$320,800</td>
-                                    <td>
-                                        @Html.ActionLink("Sửa", "Edit", "events") |
-                                        @Html.ActionLink("Chi tiết", "Detail", "events") |
-                                        @Html.ActionLink("Xóa", "Delete", "events")
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
-                                    <td>$320,800</td>
-                                    <td>
-                                        @Html.ActionLink("Sửa", "Edit", "events") |
-                                        @Html.ActionLink("Chi tiết", "Detail", "events") |
-                                        @Html.ActionLink("Xóa", "Delete", "events")
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <!-- /.container-fluid -->
-
-    </div>
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
-    <!-- End of Main Content -->
-    <!-- Footer -->
-    <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-            <div class="copyright text-center my-auto">
-                <span>Copyright &copy; Your Website 2020</span>
-            </div>
-        </div>
-    </footer>
-    <!-- End of Footer -->
-
-</div>
-<!-- End of Content Wrapper -->
+</table>

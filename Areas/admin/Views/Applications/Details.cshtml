@@ -1,0 +1,51 @@
+﻿@model FinalProjectDotNet.Models.EF.Application
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/admin/Views/Shared/_MyLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Application</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Candidate.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Candidate.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Job.title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Job.title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cover_letter)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cover_letter)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.date)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

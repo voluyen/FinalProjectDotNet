@@ -10,116 +10,107 @@ using FinalProjectDotNet.Models.EF;
 
 namespace FinalProjectDotNet.Areas.admin.Controllers
 {
-    public class ApplicationsController : Controller
+    public class CategoriesController : Controller
     {
         private HRAgencyDbContext db = new HRAgencyDbContext();
 
-        // GET: admin/Applications1
+        // GET: admin/Categories
         public ActionResult Index()
         {
-            var applications = db.Applications.Include(a => a.Candidate).Include(a => a.Job);
-            return View(applications.ToList());
+            return View(db.Categorys.ToList());
         }
 
-        // GET: admin/Applications1/Details/5
+        // GET: admin/Categories/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Application application = db.Applications.Find(id);
-            if (application == null)
+            Category category = db.Categorys.Find(id);
+            if (category == null)
             {
                 return HttpNotFound();
             }
-            return View(application);
+            return View(category);
         }
 
-        // GET: admin/Applications1/Create
+        // GET: admin/Categories/Create
         public ActionResult Create()
         {
-            ViewBag.candidate_id = new SelectList(db.Candidates, "id", "name");
-            ViewBag.job_id = new SelectList(db.Jobs, "id", "title");
             return View();
         }
 
-        // POST: admin/Applications1/Create
+        // POST: admin/Categories/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,job_id,candidate_id,cover_letter,date")] Application application)
+        public ActionResult Create([Bind(Include = "id,name")] Category category)
         {
             if (ModelState.IsValid)
             {
-                db.Applications.Add(application);
+                db.Categorys.Add(category);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.candidate_id = new SelectList(db.Candidates, "id", "name", application.candidate_id);
-            ViewBag.job_id = new SelectList(db.Jobs, "id", "title", application.job_id);
-            return View(application);
+            return View(category);
         }
 
-        // GET: admin/Applications1/Edit/5
+        // GET: admin/Categories/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Application application = db.Applications.Find(id);
-            if (application == null)
+            Category category = db.Categorys.Find(id);
+            if (category == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.candidate_id = new SelectList(db.Candidates, "id", "name", application.candidate_id);
-            ViewBag.job_id = new SelectList(db.Jobs, "id", "title", application.job_id);
-            return View(application);
+            return View(category);
         }
 
-        // POST: admin/Applications1/Edit/5
+        // POST: admin/Categories/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,job_id,candidate_id,cover_letter,date")] Application application)
+        public ActionResult Edit([Bind(Include = "id,name")] Category category)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(application).State = EntityState.Modified;
+                db.Entry(category).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.candidate_id = new SelectList(db.Candidates, "id", "name", application.candidate_id);
-            ViewBag.job_id = new SelectList(db.Jobs, "id", "title", application.job_id);
-            return View(application);
+            return View(category);
         }
 
-        // GET: admin/Applications1/Delete/5
+        // GET: admin/Categories/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Application application = db.Applications.Find(id);
-            if (application == null)
+            Category category = db.Categorys.Find(id);
+            if (category == null)
             {
                 return HttpNotFound();
             }
-            return View(application);
+            return View(category);
         }
 
-        // POST: admin/Applications1/Delete/5
+        // POST: admin/Categories/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Application application = db.Applications.Find(id);
-            db.Applications.Remove(application);
+            Category category = db.Categorys.Find(id);
+            db.Categorys.Remove(category);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
