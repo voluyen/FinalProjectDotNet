@@ -5,48 +5,51 @@
     Layout = "~/Areas/admin/Views/Shared/_MyLayout.cshtml";
 }
 
-<h2>Index</h2>
+<div class="table-container">
+    <div class="create-button">
+        @Html.ActionLink("Create New", "Create", null, new { @class = "create-link" })
+    </div>
+    <table class="table" border="1">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Candidate.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Job.title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cover_letter)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.date)
+            </th>
+            <th></th>
+        </tr>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Candidate.name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Job.title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.cover_letter)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.date)
-        </th>
-        <th></th>
-    </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Candidate.name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Job.title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.cover_letter)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.date)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.id }, new { @class = "btn btn-edit" }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.id }, new { @class = "btn btn-details" }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.id }, new { @class = "btn btn-delete" })
+                </td>
+            </tr>
+        }
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Candidate.name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Job.title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.cover_letter)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.date)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
-        </td>
-    </tr>
-}
+    </table>
+</div>
 
-</table>
+
