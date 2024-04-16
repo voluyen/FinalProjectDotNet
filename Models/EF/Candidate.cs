@@ -16,6 +16,8 @@ namespace FinalProjectDotNet.Models.EF
 
         public int id { get; set; }
 
+        public string avt { get; set; }
+
         [Required]
         public string name { get; set; }
 

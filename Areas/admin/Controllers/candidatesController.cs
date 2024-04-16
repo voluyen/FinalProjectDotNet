@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -46,10 +47,24 @@ namespace FinalProjectDotNet.Areas.admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,name,email,phone,resume,skills,experience")] Candidate candidate)
+        [ValidateInput(false)]
+        public ActionResult Create([Bind(Include = "id,avt,name,email,phone,resume,skills,experience")] Candidate candidate, HttpPostedFileBase avt)
         {
+            var filename = "";
+            var path = "";
             if (ModelState.IsValid)
             {
+                if(avt != null)
+				{
+                    filename = avt.FileName;
+                    path = Path.Combine(Server.MapPath(""), filename);
+                    avt.SaveAs(path);
+                    candidate.avt = filename;
+				}
+				else
+				{
+                    candidate.avt = "avt.png";
+				}
                 db.Candidates.Add(candidate);
                 db.SaveChanges();
                 return RedirectToAction("Index");

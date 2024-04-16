@@ -1999,7 +1999,6 @@
     <Content Include="libman.json" />
     <Content Include="Areas\admin\Views\web.config" />
     <Content Include="Areas\admin\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Content\scss\navs\_global.scss" />
     <Content Include="Content\scss\navs\_sidebar.scss" />
     <Content Include="Content\scss\navs\_topbar.scss" />
@@ -2176,7 +2175,6 @@
     <Content Include="Areas\admin\Views\Default\Index.cshtml" />
     <Content Include="Areas\admin\Views\Shared\_TableLayout.cshtml" />
     <Content Include="Areas\admin\Views\Events\Index.cshtml" />
-    <Content Include="Areas\admin\Views\Categorys\Index.cshtml" />
     <Content Include="Areas\admin\Views\Candidates\Index.cshtml" />
     <Content Include="Areas\admin\Views\Menus\Create.cshtml" />
     <Content Include="Areas\admin\Views\Menus\Delete.cshtml" />

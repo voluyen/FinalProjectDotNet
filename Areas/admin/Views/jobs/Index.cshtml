@@ -12,28 +12,28 @@
     <table class="table" border="1">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Category.name)
+                Ngành nghề
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Recruiter.name)
+                Nhà tuyển dụng
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.title)
+                Tiêu đề
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.description)
+                Mô tả công việc
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.location)
+                Địa điểm
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.salary)
+                Mức Lương
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.date_posted)
+                Ngày đăng
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.is_active)
+                Is active
             </th>
             <th></th>
         </tr>
@@ -66,9 +66,9 @@
                     @Html.DisplayFor(modelItem => item.is_active)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.id }, new { @class = "btn btn-edit" }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.id }, new { @class = "btn btn-details" }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.id }, new { @class = "btn btn-delete" })
+                    @Html.ActionLink("Sửa", "Edit", new { id = item.id }, new { @class = "btn btn-edit" }) |
+                    @Html.ActionLink("Chi tiết", "Details", new { id = item.id }, new { @class = "btn btn-details" }) |
+                    @Html.ActionLink("Xóa", "Delete", new { id = item.id }, new { @class = "btn btn-delete" })
                 </td>
             </tr>
         }

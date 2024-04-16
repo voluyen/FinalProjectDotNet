@@ -13,22 +13,25 @@
     <table class="table" border="1">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.name)
+                Hình đại diện
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.email)
+                Họ và tên
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.phone)
+                Email 
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.resume)
+                Số điện thoại
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.skills)
+                Resume
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.experience)
+                Kỹ năng
+            </th>
+            <th>
+                Kinh nghiệm
             </th>
             <th></th>
         </tr>
@@ -36,6 +39,9 @@
         @foreach (var item in Model)
         {
             <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.avt)
+                </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.name)
                 </td>

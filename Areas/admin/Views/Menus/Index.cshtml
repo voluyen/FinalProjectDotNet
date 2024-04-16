@@ -5,37 +5,42 @@
     Layout = "~/Areas/admin/Views/Shared/_MyLayout.cshtml";
 }
 
-
 <div class="table-container">
     <div class="create-button">
         @Html.ActionLink("Create New", "Create", null, new { @class = "create-link" })
     </div>
-    <table class="table" border="1">
+    <table class="table">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.name)
+                STT
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.link)
+                Tên Menu
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.meta)
+                Link
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.hide)
+                Meta
+            </th>
+            <th>
+                Hide
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.order)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.datebegin)
+                Date begin
             </th>
             <th></th>
         </tr>
-
+        @{ var cnt = 1;}
         @foreach (var item in Model)
         {
             <tr>
+                <td>
+                    @Html.Raw(cnt ++)
+                </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.name)
                 </td>
@@ -55,13 +60,12 @@
                     @Html.DisplayFor(modelItem => item.datebegin)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.id }, new { @class = "btn btn-edit" }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.id }, new { @class = "btn btn-details" }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.id }, new { @class = "btn btn-delete" })
+                    @Html.ActionLink("Sửa", "Edit", new { id = item.id }) |
+                    @Html.ActionLink("Chi tiết", "Details", new { id = item.id }) |
+                    @Html.ActionLink("Xóa", "Delete", new { id = item.id })
                 </td>
             </tr>
         }
+
     </table>
-</div>
-
-
+    </div>
