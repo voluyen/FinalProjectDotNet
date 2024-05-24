@@ -24,7 +24,26 @@ namespace FinalProjectDotNet.Controllers
             var v = from t in db.Jobs
                     select t;
 
-            return PartialView(v.Take(10).ToList());
+            return PartialView(v.ToList());
+        }
+        public ActionResult addJob()
+        {
+
+            var category_name = (from t in db.Categorys select t).ToList();
+
+
+            ViewBag.category_name = new SelectList(category_name, "id", "name");
+            return View();
+        }
+        [HttpPost]
+        public ActionResult addJob(Job job)
+        {
+            job.date_posted = DateTime.Now;
+            job.is_active = true;
+            job.id_recruiter = 31;
+            db.Jobs.Add(job);
+            db.SaveChanges();
+            return RedirectToAction("Jobs", "Default");
         }
     }
 }

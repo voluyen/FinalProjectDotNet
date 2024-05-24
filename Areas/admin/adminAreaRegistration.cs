@@ -17,7 +17,7 @@ namespace FinalProjectDotNet.Areas.admin
             context.MapRoute(
                 "admin_default",
                 "admin/{controller}/{action}/{id}",
-                new { controller = "Default",action = "Index", id = UrlParameter.Optional }
+                new { controller = "Menus",action = "Index", id = UrlParameter.Optional }
             );
         }
     }

@@ -16,17 +16,18 @@ namespace FinalProjectDotNet.Models.EF
 
         public int id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Title is required")]
         public string title { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Description is required")]
         public string description { get; set; }
 
         public int id_category { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Location is required")]
         public string location { get; set; }
 
+        [Range(1, 10000, ErrorMessage = "Price must be between $1 and $10000")]
         public decimal salary { get; set; }
 
         public DateTime date_posted { get; set; }

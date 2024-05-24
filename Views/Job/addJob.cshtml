@@ -1,0 +1,41 @@
+﻿@model FinalProjectDotNet.Models.EF.Job
+@{
+    ViewBag.Title = "addJob";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+
+
+@using (Html.BeginForm("addJob", "Job", FormMethod.Post))
+{
+    <div>
+        <label for="title">Title:</label>
+        @Html.TextBoxFor(m => m.title)
+        @Html.ValidationMessageFor(m => m.title)
+    </div>
+    <div>
+        <label for="description">Description:</label>
+        @Html.TextBoxFor(m => m.description)
+        @Html.ValidationMessageFor(m => m.description)
+    </div>
+    <div>
+        <label for="location">Location:</label>
+        @Html.TextBoxFor(m => m.location)
+        @Html.ValidationMessageFor(m => m.location)
+    </div>
+    <div>
+        <label for="salary">Salary:</label>
+        @Html.TextBoxFor(m => m.salary)
+        @Html.ValidationMessageFor(m => m.salary)
+    </div>
+    <div>
+        <label for="category">Category:</label>
+        @Html.DropDownListFor(m => m.id_category, ViewBag.category_name as SelectList, "Select category") <!-- Add this line -->
+        @Html.ValidationMessageFor(m => m.id_category)
+    </div>
+
+    <!-- Add other fields (Phone, Resume, Skills, Experience, Avatar) similarly -->
+
+    <button type="submit">Submit</button>
+}
+
