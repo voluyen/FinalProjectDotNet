@@ -1,4 +1,4 @@
-﻿@model IEnumerable<FinalProjectDotNet.Models.EF.Candidate>
+﻿@model IEnumerable<FinalProjectDotNet.Models.CandidatesView>
 
 @{
     ViewBag.Title = "Index";
@@ -23,7 +23,13 @@
                         Email
                     </th>
                     <th>
+                        Ngày Sinh
+                    </th>
+                    <th>
                         Số điện thoại
+                    </th>
+                    <th>
+                        Địa chỉ
                     </th>
                     <th>
                         Resume
@@ -34,6 +40,9 @@
                     <th>
                         Kinh nghiệm
                     </th>
+                    <th>
+                        Ngày đăng ký
+                    </th>
                     <th></th>
                 </tr>
             </thead>
@@ -41,34 +50,43 @@
             <tbody>
                 @foreach (var item in Model)
                 {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.avt)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.name)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.email)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.phone)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.resume)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.skills)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.experience)
-                        </td>
-                        <td>
-                            @Html.ActionLink("Edit", "Edit", new { id = item.id }, new { @class = "btn btn-edit" }) |
-                            @Html.ActionLink("Details", "Details", new { id = item.id }, new { @class = "btn btn-details" }) |
-                            @Html.ActionLink("Delete", "Delete", new { id = item.id }, new { @class = "btn btn-delete" })
-                        </td>
-                    </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.avt)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.full_name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.birthdate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.phone_number)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.address)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.resume)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.skills)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.experience)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.date_create)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.id }, new { @class = "btn btn-edit" }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.id }, new { @class = "btn btn-details" }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.id }, new { @class = "btn btn-delete" })
+                    </td>
+                </tr>
                 }
             </tbody>
 

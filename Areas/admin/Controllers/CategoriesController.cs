@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using FinalProjectDotNet.Models.EF;
+using EntityState = System.Data.Entity.EntityState;
 
 namespace FinalProjectDotNet.Areas.admin.Controllers
 {

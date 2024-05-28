@@ -16,25 +16,27 @@ namespace FinalProjectDotNet.Models.EF
 
         public int id { get; set; }
 
-        [Required(ErrorMessage = "Title is required")]
+        public int id_recruiter { get; set; }
+
+        [Required]
         public string title { get; set; }
 
-        [Required(ErrorMessage = "Description is required")]
+        [Required]
         public string description { get; set; }
+
+        [Required]
+        public string requirements { get; set; }
 
         public int id_category { get; set; }
 
-        [Required(ErrorMessage = "Location is required")]
-        public string location { get; set; }
+        public int location { get; set; }
 
-        [Range(1, 10000, ErrorMessage = "Price must be between $1 and $10000")]
         public decimal salary { get; set; }
 
+        [Column(TypeName = "date")]
         public DateTime date_posted { get; set; }
 
         public bool is_active { get; set; }
-
-        public int id_recruiter { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Application> Applications { get; set; }
@@ -42,5 +44,7 @@ namespace FinalProjectDotNet.Models.EF
         public virtual Category Category { get; set; }
 
         public virtual Recruiter Recruiter { get; set; }
+
+        public virtual VietnamProvince VietnamProvince { get; set; }
     }
 }

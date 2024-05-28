@@ -14,29 +14,26 @@ namespace FinalProjectDotNet.Models.EF
             Applications = new HashSet<Application>();
         }
 
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int id { get; set; }
 
-        public string avt { get; set; }
+        [Column(TypeName = "date")]
+        public DateTime? birthdate { get; set; }
 
-        [Required]
-        public string name { get; set; }
+        [StringLength(50)]
+        public string phone_number { get; set; }
 
-        [Required]
-        public string email { get; set; }
+        public string address { get; set; }
 
-        [Required]
-        public string phone { get; set; }
-
-        [Required]
         public string resume { get; set; }
 
-        [Required]
         public string skills { get; set; }
 
-        [Required]
         public string experience { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Application> Applications { get; set; }
+
+        public virtual User User { get; set; }
     }
 }

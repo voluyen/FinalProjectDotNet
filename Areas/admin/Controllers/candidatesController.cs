@@ -8,6 +8,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using FinalProjectDotNet.Models.EF;
+using FinalProjectDotNet.Models;
+using EntityState = System.Data.Entity.EntityState;
 
 namespace FinalProjectDotNet.Areas.admin.Controllers
 {
@@ -18,7 +20,24 @@ namespace FinalProjectDotNet.Areas.admin.Controllers
         // GET: admin/Candidates
         public ActionResult Index()
         {
-            return View(db.Candidates.ToList());
+            var candidates = db.Candidates.Include(c => c.User)
+                                      .Select(c => new CandidatesView
+                                      {
+                                          id =  c.id,
+                                          email = c.User.email,
+                                          avt = c.User.avt,
+                                          date_create = c.User.date_create,
+										  full_name = c.User.full_name,
+                                          birthdate = (DateTime)c.birthdate,
+                                          phone_number = c.phone_number,
+                                          address = c.address,
+                                          experience = c.experience,
+                                          skills = c.skills,
+                                          resume = c.resume
+                                      })
+                                      .ToList();
+
+            return View(candidates);
         }
 
         // GET: admin/Candidates/Details/5
@@ -28,7 +47,21 @@ namespace FinalProjectDotNet.Areas.admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Candidate candidate = db.Candidates.Find(id);
+            var candidate = db.Candidates.Include(c => c.User)
+                                      .Where(c => c.User.id == id)
+                                      .Select(c => new CandidatesView
+                                      {
+                                          email = c.User.email,
+                                          avt = c.User.avt,
+                                          date_create = c.User.date_create,
+                                          full_name = c.User.full_name,
+                                          birthdate = (DateTime)c.birthdate,
+                                          phone_number = c.phone_number,
+                                          address = c.address,
+                                          experience = c.experience,
+                                          skills = c.skills,
+                                          resume = c.resume
+                                      }).FirstOrDefault();
             if (candidate == null)
             {
                 return HttpNotFound();
@@ -59,11 +92,11 @@ namespace FinalProjectDotNet.Areas.admin.Controllers
                     filename = avt.FileName;
                     path = Path.Combine(Server.MapPath(""), filename);
                     avt.SaveAs(path);
-                    candidate.avt = filename;
+                    //candidate.avt = filename;
 				}
 				else
 				{
-                    candidate.avt = "avt.png";
+                    //candidate.avt = "avt.png";
 				}
                 db.Candidates.Add(candidate);
                 db.SaveChanges();
