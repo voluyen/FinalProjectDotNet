@@ -1,86 +1,82 @@
 ﻿@model IEnumerable<FinalProjectDotNet.Models.EF.Job>
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/admin/Views/Shared/_MyLayout.cshtml";
 }
 
+<h2>Index</h2>
 
-<div class="table-container">
-    <div class="create-button">
-        @Html.ActionLink("Create New", "Create", null, new { @class = "create-link" })
-    </div>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Category.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Recruiter.username)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VietnamProvince.ProvinceName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.requirements)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.salary)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.date_posted)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.is_active)
+        </th>
+        <th></th>
+    </tr>
 
-    <table id="example1" class="table table-bordered table-hover">
-        <thead>
-            <tr>
-                <th>
-                    Ngành nghề
-                </th>
-                <th>
-                    Nhà tuyển dụng
-                </th>
-                <th>
-                    Tiêu đề
-                </th>
-                <th>
-                    Mô tả công việc
-                </th>
-                <th>
-                    Địa điểm
-                </th>
-                <th>
-                    Mức Lương
-                </th>
-                <th>
-                    Ngày đăng
-                </th>
-                <th>
-                    Is active
-                </th>
-                <th></th>
-            </tr>
-        </thead>
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Category.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Recruiter.username)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VietnamProvince.ProvinceName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.requirements)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.salary)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.date_posted)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.is_active)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
 
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Category.name)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Recruiter.name)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.title)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.description)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.location)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.salary)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.date_posted)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.is_active)
-                    </td>
-                    <td>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.id }, new { @class = "btn btn-edit" }) |
-                        @Html.ActionLink("Details", "Details", new { id = item.id }, new { @class = "btn btn-details" }) |
-                        @Html.ActionLink("Delete", "Delete", new { id = item.id }, new { @class = "btn btn-delete" })
-                    </td>
-                </tr>
-            }
-        </tbody>
-
-    </table>
-</div>
-
-
-
+</table>

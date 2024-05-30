@@ -1,4 +1,4 @@
-﻿@model FinalProjectDotNet.Models.EF.Candidate
+﻿@model FinalProjectDotNet.Models.EF.Recruiter
 
 @{
     ViewBag.Title = "Delete";
@@ -9,11 +9,11 @@
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>Candidate</h4>
+    <h4>Recruiter</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            Họ và tên
+            @Html.DisplayNameFor(model => model.full_name)
         </dt>
 
         <dd>
@@ -21,7 +21,7 @@
         </dd>
 
         <dt>
-            Hình đại diện
+            @Html.DisplayNameFor(model => model.avatar)
         </dt>
 
         <dd>
@@ -37,7 +37,7 @@
         </dd>
 
         <dt>
-            Ngày tạo
+            @Html.DisplayNameFor(model => model.date_create)
         </dt>
 
         <dd>
@@ -45,23 +45,23 @@
         </dd>
 
         <dt>
-            Ngày sinh
+            @Html.DisplayNameFor(model => model.company_name)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.birthdate)
+            @Html.DisplayFor(model => model.company_name)
         </dd>
 
         <dt>
-            Số điện thoại
+            @Html.DisplayNameFor(model => model.phone)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.phone_number)
+            @Html.DisplayFor(model => model.phone)
         </dd>
 
         <dt>
-            Địa chỉ
+            @Html.DisplayNameFor(model => model.address)
         </dt>
 
         <dd>
@@ -69,27 +69,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.resume)
+            @Html.DisplayNameFor(model => model.website)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.resume)
-        </dd>
-
-        <dt>
-            Kỹ năng
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.skills)
-        </dd>
-
-        <dt>
-            Kinh nghiệm
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.experience)
+            @Html.DisplayFor(model => model.website)
         </dd>
 
     </dl>

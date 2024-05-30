@@ -14,8 +14,26 @@ namespace FinalProjectDotNet.Models.EF
             Jobs = new HashSet<Job>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int id { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string username { get; set; }
+
+        [Required]
+        public string password { get; set; }
+
+        [Required]
+        public string full_name { get; set; }
+
+        [Required]
+        public string avatar { get; set; }
+
+        [Required]
+        public string email { get; set; }
+
+        [Column(TypeName = "date")]
+        public DateTime date_create { get; set; }
 
         public string company_name { get; set; }
 
@@ -28,7 +46,5 @@ namespace FinalProjectDotNet.Models.EF
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Job> Jobs { get; set; }
-
-        public virtual User User { get; set; }
     }
 }

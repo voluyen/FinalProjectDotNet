@@ -24,9 +24,5 @@ namespace FinalProjectDotNet.Models.EF
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Job> Jobs { get; set; }
-
-        public virtual VietnamProvince VietnamProvinces1 { get; set; }
-
-        public virtual VietnamProvince VietnamProvince1 { get; set; }
     }
 }

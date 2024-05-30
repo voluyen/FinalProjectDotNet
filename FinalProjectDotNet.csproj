@@ -364,6 +364,8 @@
     <Compile Include="Areas\admin\Controllers\EventsController.cs" />
     <Compile Include="Areas\admin\Controllers\JobsController.cs" />
     <Compile Include="Areas\admin\Controllers\MenusController.cs" />
+    <Compile Include="Areas\admin\Controllers\RecruitersController.cs" />
+    <Compile Include="Controllers\CandidateController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DataController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
@@ -371,11 +373,10 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JobController.cs" />
     <Compile Include="Controllers\ProfessionalController.cs" />
-    <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Controllers\RecruiterController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\CandidatesView.cs" />
     <Compile Include="Models\EF\AboutU.cs" />
     <Compile Include="Models\EF\Application.cs" />
     <Compile Include="Models\EF\Banner.cs" />
@@ -391,12 +392,12 @@
     <Compile Include="Models\EF\HRAgencyDbContext.cs" />
     <Compile Include="Models\EF\News.cs" />
     <Compile Include="Models\EF\Recruiter.cs" />
-    <Compile Include="Models\EF\Role.cs" />
     <Compile Include="Models\EF\Service.cs" />
     <Compile Include="Models\EF\Testimonial.cs" />
-    <Compile Include="Models\EF\User.cs" />
     <Compile Include="Models\EF\VietnamProvince.cs" />
-    <Compile Include="Models\RegisterModel.cs" />
+    <Compile Include="Models\Login.cs" />
+    <Compile Include="Models\RegisterRecruiter.cs" />
+    <Compile Include="Models\RegisterCandidate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -4185,17 +4186,11 @@
     <Content Include="Areas\admin\Views\Default\Index.cshtml" />
     <Content Include="Areas\admin\Views\Shared\_TableLayout.cshtml" />
     <Content Include="Areas\admin\Views\Events\Index.cshtml" />
-    <Content Include="Areas\admin\Views\Candidates\Index.cshtml" />
     <Content Include="Areas\admin\Views\Menus\Create.cshtml" />
     <Content Include="Areas\admin\Views\Menus\Delete.cshtml" />
     <Content Include="Areas\admin\Views\Menus\Details.cshtml" />
     <Content Include="Areas\admin\Views\Menus\Edit.cshtml" />
     <Content Include="Areas\admin\Views\Menus\Index.cshtml" />
-    <Content Include="Areas\admin\Views\Jobs\Create.cshtml" />
-    <Content Include="Areas\admin\Views\Jobs\Delete.cshtml" />
-    <Content Include="Areas\admin\Views\Jobs\Details.cshtml" />
-    <Content Include="Areas\admin\Views\Jobs\Edit.cshtml" />
-    <Content Include="Areas\admin\Views\Jobs\Index.cshtml" />
     <Content Include="Areas\admin\Views\Applications\Create.cshtml" />
     <Content Include="Areas\admin\Views\Applications\Delete.cshtml" />
     <Content Include="Areas\admin\Views\Applications\Details.cshtml" />
@@ -4206,10 +4201,6 @@
     <Content Include="Areas\admin\Views\Banners\Details.cshtml" />
     <Content Include="Areas\admin\Views\Banners\Edit.cshtml" />
     <Content Include="Areas\admin\Views\Banners\Index.cshtml" />
-    <Content Include="Areas\admin\Views\Candidates\Create.cshtml" />
-    <Content Include="Areas\admin\Views\Candidates\Delete.cshtml" />
-    <Content Include="Areas\admin\Views\Candidates\Details.cshtml" />
-    <Content Include="Areas\admin\Views\Candidates\Edit.cshtml" />
     <Content Include="Areas\admin\Views\Categories\Create.cshtml" />
     <Content Include="Areas\admin\Views\Categories\Delete.cshtml" />
     <Content Include="Areas\admin\Views\Categories\Details.cshtml" />
@@ -4298,6 +4289,21 @@
     <Content Include="Content\dist\js\.eslintrc.json" />
     <Content Include="Content\dist\js\adminlte.js.map" />
     <Content Include="Content\dist\js\adminlte.min.js.map" />
+    <Content Include="Areas\admin\Views\Candidates\Create.cshtml" />
+    <Content Include="Areas\admin\Views\Candidates\Delete.cshtml" />
+    <Content Include="Areas\admin\Views\Candidates\Details.cshtml" />
+    <Content Include="Areas\admin\Views\Candidates\Edit.cshtml" />
+    <Content Include="Areas\admin\Views\Candidates\Index.cshtml" />
+    <Content Include="Areas\admin\Views\Recruiters\Create.cshtml" />
+    <Content Include="Areas\admin\Views\Recruiters\Delete.cshtml" />
+    <Content Include="Areas\admin\Views\Recruiters\Details.cshtml" />
+    <Content Include="Areas\admin\Views\Recruiters\Edit.cshtml" />
+    <Content Include="Areas\admin\Views\Recruiters\Index.cshtml" />
+    <Content Include="Areas\admin\Views\Jobs\Create.cshtml" />
+    <Content Include="Areas\admin\Views\Jobs\Delete.cshtml" />
+    <Content Include="Areas\admin\Views\Jobs\Details.cshtml" />
+    <Content Include="Areas\admin\Views\Jobs\Edit.cshtml" />
+    <Content Include="Areas\admin\Views\Jobs\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -4342,15 +4348,18 @@
     <Content Include="Views\Job\getJob.cshtml" />
     <Content Include="Views\Job\addJob.cshtml" />
     <Content Include="Views\Shared\_Register.cshtml" />
-    <Content Include="Views\Users\Index.cshtml" />
-    <Content Include="Views\Users\Login.cshtml" />
-    <Content Include="Views\Users\Signup.cshtml" />
+    <Content Include="Views\Candidate\Login.cshtml" />
+    <Content Include="Views\Candidate\Signup.cshtml" />
+    <Content Include="Views\Recruiter\Signup.cshtml" />
+    <Content Include="Views\Recruiter\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\admin\Data\" />
+    <Folder Include="Avatar\" />
     <Folder Include="Data\" />
     <Folder Include="Models\DAO\" />
+    <Folder Include="Resume\" />
     <Folder Include="Views\Data\" />
   </ItemGroup>
   <ItemGroup>

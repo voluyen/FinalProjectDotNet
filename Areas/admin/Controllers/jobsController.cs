@@ -15,14 +15,15 @@ namespace FinalProjectDotNet.Areas.admin.Controllers
     {
         private HRAgencyDbContext db = new HRAgencyDbContext();
 
-        // GET: admin/Jobs1
+        // GET: admin/Jobs
         public ActionResult Index()
         {
-            var jobs = db.Jobs.Include(j => j.Category).Include(j => j.Recruiter);
+            var jobs = db.Jobs.Include(j => j.Category).Include(j => j.Recruiter).Include(j => j.VietnamProvince);
+            
             return View(jobs.ToList());
         }
 
-        // GET: admin/Jobs1/Details/5
+        // GET: admin/Jobs/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -37,34 +38,37 @@ namespace FinalProjectDotNet.Areas.admin.Controllers
             return View(job);
         }
 
-        // GET: admin/Jobs1/Create
+        // GET: admin/Jobs/Create
         public ActionResult Create()
         {
             ViewBag.id_category = new SelectList(db.Categorys, "id", "name");
-            ViewBag.id_recruiter = new SelectList(db.Recruiters, "id", "name");
+            ViewBag.id_recruiter = new SelectList(db.Recruiters, "id", "username");
+            ViewBag.location = new SelectList(db.VietnamProvinces, "ProvinceID", "ProvinceName");
             return View();
         }
 
-        // POST: admin/Jobs1/Create
+        // POST: admin/Jobs/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,title,description,id_category,location,salary,date_posted,is_active,id_recruiter")] Job job)
+        public ActionResult Create([Bind(Include = "id,id_recruiter,title,description,requirements,id_category,location,salary,is_active")] Job job)
         {
             if (ModelState.IsValid)
             {
+                job.date_posted = DateTime.Now;
                 db.Jobs.Add(job);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
             ViewBag.id_category = new SelectList(db.Categorys, "id", "name", job.id_category);
-            ViewBag.id_recruiter = new SelectList(db.Recruiters, "id", "name", job.id_recruiter);
+            ViewBag.id_recruiter = new SelectList(db.Recruiters, "id", "username", job.id_recruiter);
+            ViewBag.location = new SelectList(db.VietnamProvinces, "ProvinceID", "ProvinceName", job.location);
             return View(job);
         }
 
-        // GET: admin/Jobs1/Edit/5
+        // GET: admin/Jobs/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -77,16 +81,17 @@ namespace FinalProjectDotNet.Areas.admin.Controllers
                 return HttpNotFound();
             }
             ViewBag.id_category = new SelectList(db.Categorys, "id", "name", job.id_category);
-            ViewBag.id_recruiter = new SelectList(db.Recruiters, "id", "name", job.id_recruiter);
+            ViewBag.id_recruiter = new SelectList(db.Recruiters, "id", "username", job.id_recruiter);
+            ViewBag.location = new SelectList(db.VietnamProvinces, "ProvinceID", "ProvinceName", job.location);
             return View(job);
         }
 
-        // POST: admin/Jobs1/Edit/5
+        // POST: admin/Jobs/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,title,description,id_category,location,salary,date_posted,is_active,id_recruiter")] Job job)
+        public ActionResult Edit([Bind(Include = "id,id_recruiter,title,description,requirements,id_category,location,salary,date_posted,is_active")] Job job)
         {
             if (ModelState.IsValid)
             {
@@ -95,11 +100,12 @@ namespace FinalProjectDotNet.Areas.admin.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.id_category = new SelectList(db.Categorys, "id", "name", job.id_category);
-            ViewBag.id_recruiter = new SelectList(db.Recruiters, "id", "name", job.id_recruiter);
+            ViewBag.id_recruiter = new SelectList(db.Recruiters, "id", "username", job.id_recruiter);
+            ViewBag.location = new SelectList(db.VietnamProvinces, "ProvinceID", "ProvinceName", job.location);
             return View(job);
         }
 
-        // GET: admin/Jobs1/Delete/5
+        // GET: admin/Jobs/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -114,7 +120,7 @@ namespace FinalProjectDotNet.Areas.admin.Controllers
             return View(job);
         }
 
-        // POST: admin/Jobs1/Delete/5
+        // POST: admin/Jobs/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

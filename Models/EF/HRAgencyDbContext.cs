@@ -26,19 +26,15 @@ namespace FinalProjectDotNet.Models.EF
 		public virtual DbSet<MidService> MidServices { get; set; }
 		public virtual DbSet<News> News { get; set; }
 		public virtual DbSet<Recruiter> Recruiters { get; set; }
-		public virtual DbSet<Role> Roles { get; set; }
 		public virtual DbSet<Service> Services { get; set; }
 		public virtual DbSet<Testimonial> Testimonials { get; set; }
-		public virtual DbSet<User> Users { get; set; }
 		public virtual DbSet<VietnamProvince> VietnamProvinces { get; set; }
 
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
 		{
 			modelBuilder.Entity<Candidate>()
-				.HasMany(e => e.Applications)
-				.WithRequired(e => e.Candidate)
-				.HasForeignKey(e => e.candidate_id)
-				.WillCascadeOnDelete(false);
+				.HasOptional(e => e.Application)
+				.WithRequired(e => e.Candidate);
 
 			modelBuilder.Entity<Category>()
 				.HasMany(e => e.Jobs)
@@ -62,23 +58,11 @@ namespace FinalProjectDotNet.Models.EF
 				.HasForeignKey(e => e.id_recruiter)
 				.WillCascadeOnDelete(false);
 
-			modelBuilder.Entity<User>()
-				.HasOptional(e => e.Candidate)
-				.WithRequired(e => e.User);
-
-			modelBuilder.Entity<User>()
-				.HasOptional(e => e.Recruiter)
-				.WithRequired(e => e.User);
-
 			modelBuilder.Entity<VietnamProvince>()
 				.HasMany(e => e.Jobs)
 				.WithRequired(e => e.VietnamProvince)
 				.HasForeignKey(e => e.location)
 				.WillCascadeOnDelete(false);
-
-			modelBuilder.Entity<VietnamProvince>()
-				.HasOptional(e => e.VietnamProvinces1)
-				.WithRequired(e => e.VietnamProvince1);
 		}
 	}
 }
