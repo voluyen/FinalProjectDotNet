@@ -18,6 +18,11 @@ namespace FinalProjectDotNet.Controllers
 
             return PartialView(v.ToList());
         }
-       
+        public ActionResult getDetail(int? id)
+        {
+            var candidate = db.Candidates.Where(j => j.id == id.Value);
+            return PartialView(candidate.ToList());
+        }
+
     }
 }

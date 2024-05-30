@@ -10,10 +10,6 @@ namespace FinalProjectDotNet.Controllers
 	public class HomeController : Controller
 	{
 		public HRAgencyDbContext db = new HRAgencyDbContext();
-        public ActionResult Index()
-        {
-            return View();
-        }
 
         public ActionResult getMenu()
 		{

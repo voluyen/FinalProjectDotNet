@@ -3,16 +3,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AdminLTE 3 | DataTables</title>
+    <title>AdminLTE 3 | Simple Tables</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="~/Content/plugins/fontawesome-free/css/all.min.css">
-    <!-- DataTables -->
-    <link rel="stylesheet" href="~/Content/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" href="~/Content/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-    <link rel="stylesheet" href="~/Content/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="~/Content/dist/css/adminlte.min.css">
 </head>
@@ -26,7 +22,8 @@
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="@Url.Action("Index","Menus")" class="nav-link">Home</a>
+                    <a href="@Url.Action("Home","Default")" class="nav-link">Home</a>
+                    <a href="@Url.Action("Home","Default")" class="nav-link">
                 </li>
             </ul>
 
@@ -80,7 +77,7 @@
                         <a href="#" class="dropdown-item">
                             <!-- Message Start -->
                             <div class="media">
-                                <img src="~/Content/dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+                                <img src="../../dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
                                 <div class="media-body">
                                     <h3 class="dropdown-item-title">
                                         John Pierce
@@ -96,7 +93,7 @@
                         <a href="#" class="dropdown-item">
                             <!-- Message Start -->
                             <div class="media">
-                                <img src="~/Content/dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+                                <img src="../../dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
                                 <div class="media-body">
                                     <h3 class="dropdown-item-title">
                                         Nora Silvester
@@ -155,22 +152,19 @@
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="~/Content/index3.html" class="brand-link">
-                <img src="~/Content/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">Soft Agency Admin</span>
-            </a>
-
+            
             <!-- Sidebar -->
             <div class="sidebar">
                 <!-- Sidebar user (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="~/Content/dist/img/cookies.jpg" class="img-circle elevation-2" alt="User Image">
+                        <img src="~/Content/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">CookiesDan</a>
+                        <a href="#" class="d-block" id="sidebar-user-name"></a>
                     </div>
                 </div>
+
 
                 <!-- SidebarSearch Form -->
                 <div class="form-inline">
@@ -188,70 +182,33 @@
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
-    with font-awesome or any other icon font library -->
+             with font-awesome or any other icon font library -->
+                       
                         <li class="nav-item">
-                            <a href="@Url.Action("Index","Menus")" class="nav-link">
-                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                            @if (Session["user_recruiter"] != null)
+                                {
+                            <a href="@Url.Action("GetJob","Recruiter")" class="nav-link">
+                                <i class="nav-icon fas fa-th"></i>
                                 <p>
-                                    Quản lý menu
-
+                                    Xem bài tuyển dụng
+                                    <span class="right badge badge-danger">New</span>
                                 </p>
                             </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="@Url.Action("Index","Jobs")" class="nav-link">
-                                <i class="nav-icon fas fa-copy"></i>
+                            }
+                            else
+                            {
+                            <a href="@Url.Action("GetJob","Recruiter")" class="nav-link">
+                                <i class="nav-icon fas fa-th"></i>
                                 <p>
-                                    Quản lý bài đăng
-
-
+                                    Các công việc đã ứng tuyển
+                                    <span class="right badge badge-danger">New</span>
                                 </p>
                             </a>
+                            }
+
+                        
                         </li>
 
-                        <li class="nav-item">
-                            <a href="@Url.Action("Index","Events")" class="nav-link">
-                                <i class="nav-icon fas fa-copy"></i>
-                                <p>
-                                    Quản lý sự kiện
-
-
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="@Url.Action("Index","Candidates")" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Quản lý ứng viên</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="@Url.Action("Index","Recruiters")" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Quản lý nhà tuyển dụng</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="@Url.Action("Index","Banners")" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Quản lý banner</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="@Url.Action("Index","Applications")" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Quản lý đơn xin việc</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="@Url.Action("Index","Categories")" class="nav-link">
-                                <i class="nav-icon fas fa-chart-pie"></i>
-                                <p>
-                                    Quản lý ngành nghề
-
-                                </p>
-                            </a>
-                        </li>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
@@ -266,12 +223,12 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>DataTables</h1>
+                            <h1>Simple Tables</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="@Url.Action("Index","Menus")">Home</a></li>
-                                <li class="breadcrumb-item active">DataTables</li>
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active">Simple Tables</li>
                             </ol>
                         </div>
                     </div>
@@ -281,80 +238,67 @@
             <!-- Main content -->
             <section class="content">
                 <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h3 class="card-title">DataTable with minimal features & hover style</h3>
-                                </div>
-                                <!-- /.card-header -->
-                                <div class="card-body">
-                                    @RenderBody()
-                                </div>
-                                <!-- /.card-body -->
-                            </div>
-                        </div>
-                        <!-- /.col -->
-                    </div>
+                   @RenderBody()
                     <!-- /.row -->
-                </div>
-                <!-- /.container-fluid -->
+                </div><!-- /.container-fluid -->
             </section>
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
-        <footer class="main-footer">
-            <div class="float-right d-none d-sm-block">
-                <b>Version</b> 3.2.0-rc
-            </div>
-            <strong>Copyright &copy; 2024 <a href="#">Soft Admin</a>.</strong> All rights reserved.
-        </footer>
+        <div class="footer_w3ls">
+            <div class="container">
+                <div class="footer_bottom">
+                    <div class="col-md-9 footer_bottom_grid">
+                        <div class="footer_bottom1">
+                            <a href="index.html">
+                                <h2><span class="fa fa-signal" aria-hidden="true"></span> Soft <label>Hr Agency</label></h2>
+                            </a>
+                            <p>© 2017 Soft. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
+                        </div>
+                    </div>
 
-        <!-- Control Sidebar -->
-        <aside class="control-sidebar control-sidebar-dark">
-            <!-- Control sidebar content goes here -->
-        </aside>
-        <!-- /.control-sidebar -->
-    </div>
-    <!-- ./wrapper -->
-    <!-- jQuery -->
-    <script src="~/Content/plugins/jquery/jquery.min.js"></script>
-    <!-- Bootstrap 4 -->
-    <script src="~/Content/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- DataTables  & Plugins -->
-    <script src="~/Content/plugins/datatables/jquery.dataTables.min.js"></script>
-    <script src="~/Content/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-    <script src="~/Content/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-    <script src="~/Content/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-    <script src="~/Content/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
-    <script src="~/Content/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-    <script src="~/Content/plugins/jszip/jszip.min.js"></script>
-    <script src="~/Content/plugins/pdfmake/pdfmake.min.js"></script>
-    <script src="~/Content/plugins/pdfmake/vfs_fonts.js"></script>
-    <script src="~/Content/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
-    <script src="~/Content/plugins/datatables-buttons/js/buttons.print.min.js"></script>
-    <script src="~/Content/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
-    <!-- AdminLTE App -->
-    <script src="~/Content/dist/js/adminlte.min.js"></script>
-    <!-- AdminLTE for demo purposes -->
-    <script src="~/Content/dist/js/demo.js"></script>
-    <!-- Page specific script -->
-    <script>
-        $(function () {
-            $("#example1").DataTable({
-                "responsive": true, "lengthChange": false, "autoWidth": false,
-                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-            $('#example2').DataTable({
-                "paging": true,
-                "lengthChange": false,
-                "searching": false,
-                "ordering": true,
-                "info": true,
-                "autoWidth": false,
-                "responsive": true,
-            });
-        });
-    </script>
+                    <!--- Follow -->
+                    <div class="col-md-3 footer_bottom_grid">
+                        <h6>Follow Us</h6>
+                        <div class="social">
+                            @{ Html.RenderAction("getFollow", "Home"); }
+                        </div>
+
+                        <div class="clearfix"> </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- //footer -->
+
+            <a href="#home" class="scroll" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+            <!-- js -->
+            <script type="text/javascript" src="~/Content/Scripts/jquery-3.4.1.min.js"></script>
+
+            <script type="text/javascript" src="~/Content/Scripts/bootstrap.js"></script>
+            @RenderSection("scripts", required: false)
+
+
+            <!-- Control Sidebar -->
+            <aside class="control-sidebar control-sidebar-dark">
+                <!-- Control sidebar content goes here -->
+            </aside>
+            <!-- /.control-sidebar -->
+        </div>
+        <!-- ./wrapper -->
+        <!-- jQuery -->
+        <script src="~/Content/plugins/jquery/jquery.min.js"></script>
+        <!-- Bootstrap 4 -->
+        <script src="~/Content/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- AdminLTE App -->
+        <script src="~/Content/dist/js/adminlte.min.js"></script>
+        <!-- AdminLTE for demo purposes -->
+        <script src="~/Content/dist/js/demo.js"></script>
+        <script>
+
+            // Lấy full_name từ session
+            var fullName = '@((string)Session["full_name"])';
+            document.getElementById('sidebar-user-name').textContent = fullName;
+        </script>
 </body>
 </html>

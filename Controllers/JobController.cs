@@ -30,9 +30,10 @@ namespace FinalProjectDotNet.Controllers
         {
 
             var category_name = (from t in db.Categorys select t).ToList();
-
+            var location_name = (from t in db.VietnamProvinces select t).ToList();
 
             ViewBag.category_name = new SelectList(category_name, "id", "name");
+            ViewBag.location_name = new SelectList(location_name, "ProvinceID", "ProvinceName");
             return View();
         }
         [HttpPost]
@@ -40,10 +41,18 @@ namespace FinalProjectDotNet.Controllers
         {
             job.date_posted = DateTime.Now;
             job.is_active = true;
-            job.id_recruiter = 31;
+            Recruiter user_recruiter = (Recruiter)Session["user_recruiter"];
+
+            job.id_recruiter = user_recruiter.id;
+
             db.Jobs.Add(job);
             db.SaveChanges();
             return RedirectToAction("Jobs", "Default");
+        }
+        public ActionResult getDetail(int? id)
+        {
+            var jobs = db.Jobs.Where(j => j.id == id.Value);
+            return PartialView(jobs.ToList());
         }
     }
 }

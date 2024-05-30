@@ -74,20 +74,29 @@
 <!--/search_form -->
 <div id="search_form" class="search_top">
     <h2>Start your job search</h2>
-    <form action="#" method="post">
-        <input type="text" name="Enter Keyword(s)" placeholder="Enter Keyword(s)" required="">
-        <input class="email" name="Location" type="text" placeholder="Location" required="">
-        <select id="country12" onchange="change_country(this.value)" class="frm-field required">
-            <option value="null"> Select Category</option>
-            <option value="city">Banking</option>
-            <option value="city">Finance</option>
-            <option value="city">It</option>
-            <option value="city">Specialists</option>
+    <div>
+        <input id="name" type="text" name="Enter Keyword(s)" placeholder="Enter Keyword(s)" required="">
+        <select id="country12" class="frm-field required location">
+            <option value=" ">All</option>
+            @foreach (var i in ViewBag.location)
+            {
+                <option value="@i.ProvinceID">@i.ProvinceName</option>
+            }
 
         </select>
-        <input type="submit" value="Find Jobs">
+        <select id="country12" class="frm-field required category">
+            <option value=" ">All</option>
+            @foreach (var i in ViewBag.category)
+            {
+                <option value="@i.id">@i.name</option>
+            }
+
+        </select>
+
+        <input id="submit" type="submit" value="Find Jobs">
         <div class="clearfix"></div>
-    </form>
+    </div>
+       
 </div>
 <!-- About us -->
 @{ Html.RenderAction("getAboutUs", "Home"); }
@@ -172,4 +181,24 @@
 
 <!-- //testimonials -->
 @{ Html.RenderAction("getTestimonial", "Home"); }
+
+
+@section scripts{
+  
+
+    <!-- AdminLTE App -->
+    <script src="~/Content/dist/js/admi lte.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#submit').on('click', function () {
+                var category = $('.category').val();
+                var location = $('.location').val();
+                var search = $('#name').val(); 
+                    window.location.href = '/Default/Jobs?id=' + category + '&&id_location=' + location + '&&search=' + search;
+                
+            });
+
+        });
+    </script>
+    }
 

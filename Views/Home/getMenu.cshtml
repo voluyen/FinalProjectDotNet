@@ -3,11 +3,38 @@
 
 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <nav class="link-effect-2" id="link-effect-2">
-        <ul class="nav navbar-nav">
+        <ul class="nav navbar-nav mr-auto">
             @foreach (var i in Model)
             {
                 <li>@Html.ActionLink(i.name, i.name, "Default", null, new { @class = "effect-3" })</li>
             }
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    User
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    @if (Session["user_recruiter"] != null )
+                    {
+                        @Html.ActionLink("My profile", "Index", "Recruiter", null, new { @class = "dropdown-item", style = " color: black; display: block; padding: 0.5rem 1rem;" })
+                        @Html.ActionLink("My Job", "#", "#", null, new { @class = "dropdown-item", style = "color: black; display: block; padding: 0.5rem 1rem;" })
+                        @Html.ActionLink("Logout", "Logout", "User", null, new { @class = "dropdown-item", style = "color: black; display: block; padding: 0.5rem 1rem;" })}
+                    else {
+                    if (Session["user_candidate"] != null)
+                    {
+                        @Html.ActionLink("My profile", "Index", "Candidate", null, new { @class = "dropdown-item", style = " color: black; display: block; padding: 0.5rem 1rem;" })
+                        @Html.ActionLink("My Job", "#", "#", null, new { @class = "dropdown-item", style = "color: black; display: block; padding: 0.5rem 1rem;" })
+                        @Html.ActionLink("Logout", "Logout", "User", null, new { @class = "dropdown-item", style = "color: black; display: block; padding: 0.5rem 1rem;" }) }
+                    else
+                    {
+                        @Html.ActionLink("Login", "Index", "User", null, new { @class = "effect-3 dropdown-item", style = "color: black; display: block; padding: 0.5rem 1rem;" })}
+                    }
+
+                </div>
+            </li>
+
         </ul>
     </nav>
 </div>
+

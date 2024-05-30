@@ -38,11 +38,36 @@
                         </ul>
                         <div id="myTabContent" class="tab-content">
                             <div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
-                                @{ Html.RenderAction("getJob", "Job"); }
+                                @foreach (var i in Model)
+                                {
+                                    <div class="tab_grid">
+                                        <div class="col-sm-3 loc_1">
+                                            <a href="#"><img src="/Images/loc2.jpg" alt=""></a>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <div class="location_box1">
+                                                <h6><a href="#">@i.title </a><span class="m_1">Posted 5 hours ago</span></h6>
+                                                <p>
+                                                    <span class="m_2">Location : </span>@i.VietnamProvince.ProvinceName
+                                                </p>
+                                                <ul class="links_bottom">
+                                                    <li><a href="#"><i class="fa fa-envelope-o icon_1"> </i><span class="icon_text"> Email this Job</span></a></li>
+                                                    <li><a href="#"><i class="fa fa-eye icon_1"> </i> <span class="icon_text">View full Job Description</span></a></li>
+                                                    @*<li class="last"><a href="#"><span class="icon_text">More <i class="fa fa-caret-right icon_1"> </i></span></a></li>*@
+                                                    <li class="last">
+                                                        @Html.ActionLink("More", "getDetail", "Job", new { id = @i.id }, new { @class = "icon_text text-white font-weight-bold", @title = "More" })
+                                                    </li>
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"> </div>
+                                    </div>
+                                }
 
                             </div>
                             <div role="tabpanel" class="tab-pane fade" id="profile" aria-labelledby="profile-tab">
-                                
+
 
                             </div>
                         </div>
@@ -51,25 +76,57 @@
             </div>
         </div>
         <div class="col-md-4 job_info_right">
+            @if (Session["user_recruiter"] != null)
+            {
+                @Html.ActionLink("Add new Job", "addJob", "Job", new { area = "" }, new { @class = "active btn btn-success" })
+            }
 
-            <div class="widget_search">
-                <h5 class="widget-title">Search</h5>
-                <div class="widget-content">
-                    <span>I'm looking for a ...</span>
-                    <select class="form-control jb_1">
-                        <option value="0">Job</option>
-                        <option value="">Category</option>
-                        <option value="">Category</option>
-                        <option value="">Category</option>
-                        <option value="">Category</option>
-                    </select>
-                    <span>in</span>
-                    <input type="text" class="form-control jb_2" placeholder="Location">
-                    <input type="text" class="form-control jb_2" placeholder="Industry / Role">
-                    <input type="submit" value="Search">
-                </div>
+
+            <h5 class="widget-title">Search</h5>
+            <div class="widget-content">
+                <label for="category">Category</label>
+                <select id="category" class="form-control jb_1">
+                    <option value=" ">All</option>
+                    @foreach (var i in ViewBag.category)
+                    {
+
+                        if (ViewBag.category_select == i.id)
+                        {
+                            <option selected value="@i.id">@i.name</option>
+                        }
+
+                        else
+                        {
+                            <option value="@i.id">@i.name</option>
+                        }
+
+                    }
+
+                </select>
+                <label for="location">Location</label>
+                <select id="location" class="form-control jb_1">
+                    <option value=" ">All</option>
+                    @foreach (var i in ViewBag.location)
+                    {
+
+                        if (ViewBag.location_select == i.ProvinceID)
+                        {
+                            <option selected value="@i.ProvinceID">@i.ProvinceName</option>
+                        }
+
+                        else
+                        {
+                            <option value="@i.ProvinceID">@i.ProvinceName</option>
+                        }
+
+                    }
+
+                </select>
+                <label for="range_1">Salary</label>
+                <input id="range_1" type="text" name="range_1" value="">
+                <input id="search" type="submit" value="Search">
             </div>
-            @{ Html.RenderAction("getCategory", "Job"); }
+
             <div class="col_3 experience">
                 <h3>Work Experiance</h3>
                 <table class="table">
@@ -204,3 +261,54 @@
         <div class="clearfix"></div>
     </div>
 </div>
+
+@section scripts{
+    <script src="~/Content/plugins/ion-rangeslider/js/ion.rangeSlider.min.js"></script>
+
+    <!-- AdminLTE App -->
+    <script src="~/Content/dist/js/adminlte.min.js"></script>
+    <!-- Bootstrap slider -->
+    <script src="~/Content/plugins/bootstrap-slider/bootstrap-slider.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <!-- AdminLTE App -->
+    <script src="~/Content/dist/js/adminlte.min.js"></script>
+    <script>
+            $(document).ready(function () {
+                $('#search').on('click', function () {
+                    var category = $('#category').val();
+                    var location = $('#location').val();
+                    var Salary = $('#range_1').val();
+                    if (category.length > 0) {
+                        window.location.href = '/Default/Jobs?id=' + category + '&&id_location=' + location + '&&salary=' + Salary;
+
+                    }
+                });
+                $('.slider').bootstrapSlider()
+                var salary = (new URL(location.href)).searchParams.get('salary');
+                var min = 0;
+                var max = 500000;
+                if (salary != null) {
+                    var data_array = salary.split(';');
+                    min = data_array[0];
+                    max = data_array[1];
+                }
+
+
+                /* ION SLIDER */
+                $('#range_1').ionRangeSlider({
+
+                    min: 0,
+                    max: 500000,
+                    from: min,
+                    to: max,
+                    type: 'double',
+                    step: 1,
+                    prefix: '$',
+                    prettify: false,
+                    hasGrid: true
+                })
+
+            });
+    </script>
+
+}

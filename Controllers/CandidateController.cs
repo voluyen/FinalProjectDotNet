@@ -19,85 +19,21 @@ namespace FinalProjectDotNet.Controllers
         // GET: Candidate
         public ActionResult Index()
         {
-            return View();
-        }
+            Candidate user_candidate = (Candidate)Session["user_candidate"];
 
-        public ActionResult Login()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Login(Login model)
-        {
-            var user = await db.Candidates.FirstOrDefaultAsync(u => u.username == model.username);
-
-            if (user == null || passwordHasher.VerifyHashedPassword(user, user.password, model.password) != PasswordVerificationResult.Success)
+            Recruiter user_recruiter = (Recruiter)Session["user_recruiter"];
+            if (user_candidate != null)
             {
-                ModelState.AddModelError("", "Sai username hoặc password.");
-                return View(model);
+                return View(new { user = user_candidate });
+            }
+            if (user_recruiter != null)
+            {
+                return View(new { user = user_recruiter });
             }
 
-            return RedirectToAction("Index", "Home");
-        }
-
-        public ActionResult Signup()
-        {
             return View();
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Signup(RegisterCandidate model)
-        {
-            if (ModelState.IsValid)
-            {
-                if (db.Candidates.Any(r => r.username == model.username))
-                {
-                    ModelState.AddModelError("username", "Username already exists. Please choose a different username.");
-                    return View(model);
-                }
 
-                string avt_path = "/Avatars/avt.png";
-                if (model.avatar_file != null && model.avatar_file.ContentLength > 0)
-                {
-                    string fileName = Path.GetFileName(model.avatar_file.FileName);
-                    string filePath = Path.Combine(Server.MapPath("~/Avatars/"), fileName);
-                    model.avatar_file.SaveAs(filePath);
-                    avt_path = "/Avatars/" + fileName;
-                }
-
-                string resume_path = "";
-                if(model.resume != null && model.resume.ContentLength > 0)
-				{
-                    string fileName = Path.GetFileName(model.resume.FileName);
-                    string filePath = Path.Combine(Server.MapPath("~/Resume/"), fileName);
-                    model.resume.SaveAs(filePath);
-                    resume_path = filePath;
-				}
-
-                var candidate = new Candidate
-                {
-                    username = model.username,
-                    full_name = model.full_name,
-                    avatar = avt_path,
-                    email = model.email,
-                    date_create = DateTime.Now,
-                    birthdate = model.birthdate,
-                    phone_number = model.phone_number,
-                    address = model.address,
-                    resume = resume_path,
-                    skills = model.skills,
-                    experience = model.experience,
-                };
-                candidate.password = passwordHasher.HashPassword(candidate, model.password);
-                db.Candidates.Add(candidate);
-                await db.SaveChangesAsync();
-                return RedirectToAction("Login");
-            }
-
-            return View(model);
-        }
     }
 }

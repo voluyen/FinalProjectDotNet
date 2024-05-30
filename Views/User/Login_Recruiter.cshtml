@@ -5,10 +5,11 @@
     Layout = "~/Views/Shared/_MyLayout.cshtml";
 }
 
-@using (Html.BeginForm("Login", "Recruiter", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+@using (Html.BeginForm("Login_Recruiter", "User", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
 
+<div class="container">
     <div class="form-group">
         @Html.LabelFor(model => model.username, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
@@ -30,5 +31,6 @@
             <input type="submit" value="Đăng nhập" class="btn btn-primary" />
         </div>
     </div>
+</div>
 }
 @Html.ValidationSummary(true, "", new { @class = "text-danger" })

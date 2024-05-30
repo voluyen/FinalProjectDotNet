@@ -374,6 +374,7 @@
     <Compile Include="Controllers\JobController.cs" />
     <Compile Include="Controllers\ProfessionalController.cs" />
     <Compile Include="Controllers\RecruiterController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -4347,11 +4348,22 @@
     <Content Include="Views\Contact\getContact.cshtml" />
     <Content Include="Views\Job\getJob.cshtml" />
     <Content Include="Views\Job\addJob.cshtml" />
-    <Content Include="Views\Shared\_Register.cshtml" />
-    <Content Include="Views\Candidate\Login.cshtml" />
-    <Content Include="Views\Candidate\Signup.cshtml" />
-    <Content Include="Views\Recruiter\Signup.cshtml" />
-    <Content Include="Views\Recruiter\Login.cshtml" />
+    <Content Include="Views\Job\getDetail.cshtml" />
+    <Content Include="Views\Professional\getDetail.cshtml" />
+    <Content Include="Views\User\Signup_candidate.cshtml" />
+    <Content Include="Views\User\Signup_Recruiter.cshtml" />
+    <Content Include="Views\User\Login_Recruiter.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\User\Login_Candidate.cshtml" />
+    <Content Include="Views\User\Login_NTD.cshtml" />
+    <Content Include="Views\Recruiter\Index.cshtml" />
+    <Content Include="Views\Shared\_ProfileLayout.cshtml" />
+    <Content Include="Views\Candidate\Index.cshtml" />
+    <Content Include="Views\Recruiter\GetJob.cshtml" />
+    <Content Include="Views\Recruiter\Create.cshtml" />
+    <Content Include="Views\Recruiter\Edit.cshtml" />
+    <Content Include="Views\Recruiter\Delete.cshtml" />
+    <Content Include="Views\Recruiter\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

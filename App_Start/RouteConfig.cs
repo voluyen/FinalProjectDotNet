@@ -20,6 +20,7 @@ namespace FinalProjectDotNet
 				namespaces: new[] { "FinalProjectDotNet.Controllers" }
 				);
 
+
 		}
 	}
 }

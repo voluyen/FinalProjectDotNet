@@ -19,8 +19,14 @@
         @Html.ValidationMessageFor(m => m.description)
     </div>
     <div>
+        <label for="description">Requirements:</label>
+        @Html.TextBoxFor(m => m.requirements)
+        @Html.ValidationMessageFor(m => m.requirements)
+    </div>
+    <div>
         <label for="location">Location:</label>
-        @Html.TextBoxFor(m => m.location)
+
+        @Html.DropDownListFor(m => m.location, ViewBag.location_name as SelectList, "Select location") <!-- Add this line -->
         @Html.ValidationMessageFor(m => m.location)
     </div>
     <div>

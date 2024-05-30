@@ -14,7 +14,7 @@
         <thead>
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.Candidate.name)
+                    @Html.DisplayNameFor(model => model.Candidate.full_name)
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.Job.title)
@@ -32,7 +32,7 @@
             {
                 <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Candidate.name)
+                        @Html.DisplayFor(modelItem => item.Candidate.full_name)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Job.title)
