@@ -20,7 +20,7 @@
                     <h3>Improving workplace <span>Productivity.</span></h3>
                     <p>Hire. Train. Retain.</p>
                     <div class="agileits-button top_ban_agile">
-                        <a class="btn btn-primary btn-lg" href="single.html">Read More »</a>
+                        <a class="btn btn-primary btn-lg" href="#">Read More »</a>
                     </div>
                 </div>
             </div>
@@ -31,7 +31,7 @@
                     <h3>Inspiring leadership <span>innovation.</span></h3>
                     <p>Hire. Train. Retain.</p>
                     <div class="agileits-button top_ban_agile">
-                        <a class="btn btn-primary btn-lg" href="single.html">Read More »</a>
+                        <a class="btn btn-primary btn-lg" href="#">Read More »</a>
                     </div>
                 </div>
             </div>
@@ -42,7 +42,7 @@
                     <h3>Improving workplace <span>Productivity.</span></h3>
                     <p>Hire. Train. Retain.</p>
                     <div class="agileits-button top_ban_agile">
-                        <a class="btn btn-primary btn-lg" href="single.html">Read More »</a>
+                        <a class="btn btn-primary btn-lg" href="#">Read More »</a>
                     </div>
                 </div>
             </div>
@@ -109,75 +109,6 @@
 
 <!-- mid-services -->
 @{ Html.RenderAction("getMidService", "Home"); }
-
-<div class="candidate_cv">
-    <div class="tittle_head_w3ls">
-        <h3 class="tittle two">Candidate Cv</h3>
-    </div>
-    <div class="inner_sec_grids_info login-form">
-        <form action="#" method="post">
-            <div class="col-md-6 form-left">
-                <div class="form-inputs email">
-                    <p>Full name</p>
-                    <i class="fa fa-user" aria-hidden="true"></i>
-                    <input type="text" name="Name" placeholder="" required="" />
-                </div>
-                <div class="form-inputs name">
-                    <p>Email</p>
-                    <i class="fa fa-envelope" aria-hidden="true"></i>
-                    <input type="email" name="Email" placeholder="" required="" />
-                </div>
-                <div class="form-inputs name">
-                    <p>Phone</p>
-                    <i class="fa fa-phone" aria-hidden="true"></i>
-                    <input type="text" name="Phone" placeholder="" required="" />
-                </div>
-
-            </div>
-            <div class="col-md-6 form-right">
-                <div class="form-inputs name">
-                    <p>Comment</p>
-                    <i class="fa fa-comment" aria-hidden="true"></i>
-                    <textarea name="Message" placeholder="" required=""></textarea>
-                </div>
-            </div>
-            <div class="clearfix"></div>
-            <div class="form-inputs">
-                <p>Specify your current employment status</p>
-                <ul>
-                    <li>
-                        <input type="radio" id="a-option" name="selector1">
-                        <label for="a-option">Employed </label>
-                        <div class="check"></div>
-                    </li>
-                    <li>
-                        <input type="radio" id="b-option" name="selector1">
-                        <label for="b-option">Unemployed</label>
-                        <div class="check"></div>
-                    </li>
-                    <li>
-                        <input type="radio" id="c-option" name="selector1">
-                        <label for="c-option">Self-Employed</label>
-                        <div class="check"></div>
-                    </li>
-                    <li>
-                        <input type="radio" id="d-option" name="selector1">
-                        <label for="d-option">Student</label>
-                        <div class="check"></div>
-                    </li>
-                </ul>
-                <div class="clearfix"></div>
-            </div>
-            <div class="form-inputs upload">
-                <p>Upload your resume</p>
-                <input type="file" id="fileselect" name="fileselect[]" multiple="multiple" />
-                <div id="filedrag">Upload</div>
-            </div>
-            <input type="submit" value="Submit Cv">
-        </form>
-
-    </div>
-</div>
 
 <!-- //testimonials -->
 @{ Html.RenderAction("getTestimonial", "Home"); }

@@ -12,7 +12,7 @@ using System.IO;
 
 namespace FinalProjectDotNet.Controllers
 {
-    public class CandidateController : Controller
+    public class CandidatesController : Controller
     {
         private HRAgencyDbContext db = new HRAgencyDbContext();
         private readonly PasswordHasher<Candidate> passwordHasher = new PasswordHasher<Candidate>();

@@ -1,0 +1,35 @@
+﻿@model List<FinalProjectDotNet.Models.EF.Event>
+
+@{
+    ViewBag.Title = "getDetail";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+<!-- banner -->
+<div class="inner_page_agile">
+    <h3>Events</h3>
+    <p>Add Some Short Descript  ion</p>
+
+</div>
+<!--//banner -->
+<!-- /inner_content -->
+@foreach (var i in Model)
+{
+    <div class="services-breadcrumb_w3layouts">
+        <div class="inner_breadcrumb">
+
+            <ul class="short_w3ls" _w3ls>
+                <li>@Html.ActionLink("Trang chủ", "Home", "Default", new { area = "" }, new { @class = "nav-link" })<span>|</span></li>
+                <li>@Html.ActionLink("Sự kiện", "Events", "Default", new { area = "" }, new { @class = "nav-link" })<span>|</span></li>
+                <li>@i.title</li>
+            </ul>
+        </div>
+    </div>
+    <div class="inner_content_info_agileits">
+        <div class="container">
+            <h1>@i.title</h1>
+            <p>Ngày đăng: @i.date</p>
+            <p>@i.description</p>
+        </div>
+    </div>
+}

@@ -6,7 +6,7 @@
         <ul class="nav navbar-nav mr-auto">
             @foreach (var i in Model)
             {
-                <li>@Html.ActionLink(i.name, i.name, "Default", null, new { @class = "effect-3" })</li>
+                <li>@Html.ActionLink(i.name, i.link, "Default", null, new { @class = "effect-3" })</li>
             }
 
             <li class="nav-item dropdown">
@@ -15,20 +15,25 @@
                 </a>
 
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    @if (Session["user_recruiter"] != null )
+                    @if (Session["user_recruiter"] != null)
                     {
                         @Html.ActionLink("My profile", "Index", "Recruiter", null, new { @class = "dropdown-item", style = " color: black; display: block; padding: 0.5rem 1rem;" })
                         @Html.ActionLink("My Job", "#", "#", null, new { @class = "dropdown-item", style = "color: black; display: block; padding: 0.5rem 1rem;" })
-                        @Html.ActionLink("Logout", "Logout", "User", null, new { @class = "dropdown-item", style = "color: black; display: block; padding: 0.5rem 1rem;" })}
-                    else {
-                    if (Session["user_candidate"] != null)
-                    {
-                        @Html.ActionLink("My profile", "Index", "Candidate", null, new { @class = "dropdown-item", style = " color: black; display: block; padding: 0.5rem 1rem;" })
-                        @Html.ActionLink("My Job", "#", "#", null, new { @class = "dropdown-item", style = "color: black; display: block; padding: 0.5rem 1rem;" })
-                        @Html.ActionLink("Logout", "Logout", "User", null, new { @class = "dropdown-item", style = "color: black; display: block; padding: 0.5rem 1rem;" }) }
+                        @Html.ActionLink("Logout", "Logout", "User", null, new { @class = "dropdown-item", style = "color: black; display: block; padding: 0.5rem 1rem;" })
+                    }
                     else
                     {
-                        @Html.ActionLink("Login", "Index", "User", null, new { @class = "effect-3 dropdown-item", style = "color: black; display: block; padding: 0.5rem 1rem;" })}
+                        if (Session["user_candidate"] != null)
+                        {
+                            @Html.ActionLink("My profile", "Index", "Candidate", null, new { @class = "dropdown-item", style = " color: black; display: block; padding: 0.5rem 1rem;" })
+                            @Html.ActionLink("My Job", "#", "#", null, new { @class = "dropdown-item", style = "color: black; display: block; padding: 0.5rem 1rem;" })
+                            @Html.ActionLink("Logout", "Logout", "User", null, new { @class = "dropdown-item", style = "color: black; display: block; padding: 0.5rem 1rem;" }) 
+                        }
+                        else
+                        {
+                            @Html.ActionLink("Login", "Index", "User", null, new { @class = "effect-3 dropdown-item", style = "color: black; display: block; padding: 0.5rem 1rem;" })
+                            @Html.ActionLink("Signup", "Index", "User", null, new { @class = "effect-3 dropdown-item", style = "color: black; display: block; padding: 0.5rem 1rem;" })
+                        }
                     }
 
                 </div>

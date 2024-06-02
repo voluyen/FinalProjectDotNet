@@ -12,32 +12,39 @@
     <table id="example2" class="table table-bordered table-hover">
         <thead>
             <tr>
+                <td>
+                    STT
+                </td>
                 <th>
-                    @Html.DisplayNameFor(model => model.title)
+                    Tiêu đề
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.description)
+                    Mô tả
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.date)
+                    Ngày
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.order)
+                    Thứ tự
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.hide)
+                    Ẩn
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.link)
+                    Link
                 </th>
                 <th></th>
             </tr>
         </thead>
 
         <tbody>
+            @{var number = 1;}
             @foreach (var item in Model)
             {
                 <tr>
+                    <td>
+                        @Html.Raw(number++)
+                    </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.title)
                     </td>

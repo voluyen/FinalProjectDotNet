@@ -9,9 +9,7 @@
             <a href="@i.link"><img src="/Images/e6.jpg" alt=""></a>
             <div class="events_info">
                 <h5>@i.date</h5>
-                <h4><a href="@i.link">@i.title</a></h4>
-                <p>@i.description</p>
-
+                 <h4>@Html.ActionLink(i.title, "getDetail", "Events", new { id = @i.id }, new { @class = "icon_text" })</h4>
             </div>
         </div>
     }

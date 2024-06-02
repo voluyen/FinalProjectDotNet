@@ -91,7 +91,7 @@ namespace FinalProjectDotNet.Areas.admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,id_recruiter,title,description,requirements,id_category,location,salary,date_posted,is_active")] Job job)
+        public ActionResult Edit([Bind(Include = "id,id_recruiter,title,description,requirements,id_category,location,salary,is_active")] Job job)
         {
             if (ModelState.IsValid)
             {

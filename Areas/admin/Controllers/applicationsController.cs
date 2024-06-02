@@ -50,10 +50,11 @@ namespace FinalProjectDotNet.Areas.admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,job_id,candidate_id,cover_letter,date")] Application application)
+        public ActionResult Create([Bind(Include = "id,job_id,candidate_id,cover_letter")] Application application)
         {
             if (ModelState.IsValid)
             {
+                application.date = DateTime.Now;
                 db.Applications.Add(application);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -86,7 +87,7 @@ namespace FinalProjectDotNet.Areas.admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,job_id,candidate_id,cover_letter,date")] Application application)
+        public ActionResult Edit([Bind(Include = "id,job_id,candidate_id,cover_letter")] Application application)
         {
             if (ModelState.IsValid)
             {

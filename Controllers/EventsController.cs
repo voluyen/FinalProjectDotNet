@@ -7,7 +7,7 @@ using FinalProjectDotNet.Models.EF;
 
 namespace FinalProjectDotNet.Controllers
 {
-    public class EventController : Controller
+    public class EventsController : Controller
     {
         public HRAgencyDbContext db = new HRAgencyDbContext();
         // GET: Event
@@ -25,5 +25,12 @@ namespace FinalProjectDotNet.Controllers
 
             return PartialView(v.Take(6).ToList());
 		}
+
+
+        public ActionResult getDetail(int? id)
+        {
+            var @event = db.Events.Where(j => j.id == id.Value);
+            return View(@event.ToList());
+        }
     }
 }

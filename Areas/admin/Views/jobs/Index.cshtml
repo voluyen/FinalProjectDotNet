@@ -13,42 +13,45 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Category.name)
+            Ngành
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Recruiter.username)
+            Nhà tuyển dụng
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.VietnamProvince.ProvinceName)
+            Địa điểm
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.title)
+            Tiêu đề
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.description)
+            Mô tả công việc
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.requirements)
+            Yêu cầu
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.salary)
+            Mức lương
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.date_posted)
+            Ngày đăng
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.is_active)
+            Trạng thái
         </th>
         <th></th>
     </tr>
-
+    @{ var number = 1;}
 @foreach (var item in Model) {
     <tr>
+        <td>
+            @Html.Raw(number++)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.Category.name)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Recruiter.username)
+            @Html.DisplayFor(modelItem => item.Recruiter.full_name)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.VietnamProvince.ProvinceName)

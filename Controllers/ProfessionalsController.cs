@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace FinalProjectDotNet.Controllers
 {
-    public class ProfessionalController : Controller
+    public class ProfessionalsController : Controller
     {
         // GET: Professional
         public HRAgencyDbContext db = new HRAgencyDbContext();

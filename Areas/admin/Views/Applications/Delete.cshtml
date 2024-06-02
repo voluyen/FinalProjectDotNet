@@ -13,15 +13,15 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Candidate.name)
+            Tên ứng viên
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Candidate.name)
+            @Html.DisplayFor(model => model.Candidate.full_name)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Job.title)
+            Tiêu đề việc làm
         </dt>
 
         <dd>
@@ -29,7 +29,15 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.cover_letter)
+            Resume
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Candidate.resume)
+        </dd>
+
+        <dt>
+            Thư giới thiệu
         </dt>
 
         <dd>
@@ -37,7 +45,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.date)
+            Ngày gửi
         </dt>
 
         <dd>

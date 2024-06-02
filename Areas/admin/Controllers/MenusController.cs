@@ -47,10 +47,11 @@ namespace FinalProjectDotNet.Areas.admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,name,link,meta,hide,order,datebegin")] Menu menu)
+        public ActionResult Create([Bind(Include = "id,name,link,meta,hide,order")] Menu menu)
         {
             if (ModelState.IsValid)
             {
+                menu.datebegin = DateTime.Now;
                 db.Menus.Add(menu);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -79,7 +80,7 @@ namespace FinalProjectDotNet.Areas.admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,name,link,meta,hide,order,datebegin")] Menu menu)
+        public ActionResult Edit([Bind(Include = "id,name,link,meta,hide,order")] Menu menu)
         {
             if (ModelState.IsValid)
             {

@@ -19,7 +19,7 @@ namespace FinalProjectDotNet.Controllers
 
             return View();
         }
-        public ActionResult Jobs(string search,int? id, int? id_location, string salary)
+        public ActionResult Jobs(string search, int? id, int? id_location, string salary)
         {
             var jobs = db.Jobs.AsQueryable();
             if (!String.IsNullOrEmpty(search))

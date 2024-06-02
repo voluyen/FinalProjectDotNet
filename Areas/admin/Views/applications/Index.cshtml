@@ -14,28 +14,41 @@
         <thead>
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.Candidate.full_name)
+                    STT
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Job.title)
+                    Tên ứng viên
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.cover_letter)
+                    Tiêu đề công việc
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.date)
+                    Resume
+                </th>
+                <th>
+                    Thư giới thiệu
+                </th>
+                <th>
+                    Ngày gửi
                 </th>
             </tr>
         </thead>
         <tbody>
+            @{ var number = 1;}
             @foreach (var item in Model)
             {
                 <tr>
+                    <td>
+                        @Html.Raw(number++)
+                    </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Candidate.full_name)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Job.title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Candidate.resume)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.cover_letter)

@@ -112,7 +112,7 @@ namespace FinalProjectDotNet.Areas.admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,username,password,full_name,avatar,email,date_create,company_name,phone,address,website")] Recruiter recruiter)
+        public ActionResult Edit([Bind(Include = "id,full_name,avatar,email,company_name,phone,address,website")] Recruiter recruiter)
         {
             if (ModelState.IsValid)
             {

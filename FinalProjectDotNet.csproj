@@ -365,14 +365,14 @@
     <Compile Include="Areas\admin\Controllers\JobsController.cs" />
     <Compile Include="Areas\admin\Controllers\MenusController.cs" />
     <Compile Include="Areas\admin\Controllers\RecruitersController.cs" />
-    <Compile Include="Controllers\CandidateController.cs" />
+    <Compile Include="Controllers\CandidatesController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DataController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
-    <Compile Include="Controllers\EventController.cs" />
+    <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\JobController.cs" />
-    <Compile Include="Controllers\ProfessionalController.cs" />
+    <Compile Include="Controllers\JobsController.cs" />
+    <Compile Include="Controllers\ProfessionalsController.cs" />
     <Compile Include="Controllers\RecruiterController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
@@ -4337,19 +4337,19 @@
     <Content Include="Views\Default\Contact.cshtml" />
     <Content Include="Views\Default\Jobs.cshtml" />
     <Content Include="Views\Default\Home.cshtml" />
-    <Content Include="Views\Professional\getCandidate.cshtml" />
-    <Content Include="Views\Job\getCategory.cshtml" />
+    <Content Include="Views\Professionals\getCandidate.cshtml" />
+    <Content Include="Views\Jobs\getCategory.cshtml" />
     <Content Include="Views\Home\getAboutUs.cshtml" />
     <Content Include="Views\Home\getBannerBottom.cshtml" />
     <Content Include="Views\Home\getService.cshtml" />
     <Content Include="Views\Home\getMidService.cshtml" />
     <Content Include="Views\Home\getTestimonial.cshtml" />
-    <Content Include="Views\Event\getEvent.cshtml" />
+    <Content Include="Views\Events\getEvent.cshtml" />
     <Content Include="Views\Contact\getContact.cshtml" />
-    <Content Include="Views\Job\getJob.cshtml" />
-    <Content Include="Views\Job\addJob.cshtml" />
-    <Content Include="Views\Job\getDetail.cshtml" />
-    <Content Include="Views\Professional\getDetail.cshtml" />
+    <Content Include="Views\Jobs\getJob.cshtml" />
+    <Content Include="Views\Jobs\addJob.cshtml" />
+    <Content Include="Views\Jobs\getDetail.cshtml" />
+    <Content Include="Views\Professionals\getDetail.cshtml" />
     <Content Include="Views\User\Signup_candidate.cshtml" />
     <Content Include="Views\User\Signup_Recruiter.cshtml" />
     <Content Include="Views\User\Login_Recruiter.cshtml" />
@@ -4364,6 +4364,7 @@
     <Content Include="Views\Recruiter\Edit.cshtml" />
     <Content Include="Views\Recruiter\Delete.cshtml" />
     <Content Include="Views\Recruiter\Details.cshtml" />
+    <Content Include="Views\Events\getDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -47,10 +47,11 @@ namespace FinalProjectDotNet.Areas.admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,title,description,date,order,hide,link")] Event @event)
+        public ActionResult Create([Bind(Include = "id,title,description,order,hide,link")] Event @event)
         {
             if (ModelState.IsValid)
             {
+                @event.date = DateTime.Now;
                 db.Events.Add(@event);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -79,7 +80,7 @@ namespace FinalProjectDotNet.Areas.admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,title,description,date,order,hide,link")] Event @event)
+        public ActionResult Edit([Bind(Include = "id,title,description,order,hide,link")] Event @event)
         {
             if (ModelState.IsValid)
             {

@@ -16,8 +16,8 @@
     <div class="inner_breadcrumb">
 
         <ul class="short_w3ls" _w3ls>
-            <li>@Html.ActionLink("Home", "Home", "Default", new { area = "" }, new { @class = "nav-link" })<span>|</span></li>
-            <li>Events</li>
+            <li>@Html.ActionLink("Trang chủ", "Home", "Default", new { area = "" }, new { @class = "nav-link" })<span>|</span></li>
+            <li>Sự kiện</li>
         </ul>
     </div>
 </div>
@@ -28,7 +28,7 @@
         <div class="tittle_head_w3ls">
             <h3 class="tittle">Our Events</h3>
         </div>
-        @{ Html.RenderAction("getEvent", "Event"); }
+        @{ Html.RenderAction("getEvent", "Events"); }
 
     </div>
 </div>

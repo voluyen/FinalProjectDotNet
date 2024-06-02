@@ -7,10 +7,9 @@ using System.Web.Mvc;
 using FinalProjectDotNet.Models.EF;
 namespace FinalProjectDotNet.Controllers
 {
-    public class JobController : Controller
+    public class JobsController : Controller
     {
         public HRAgencyDbContext db = new HRAgencyDbContext();
-        // GET: Job
         public ActionResult getCategory()
         {
             var v = from t in db.Categorys
@@ -52,7 +51,7 @@ namespace FinalProjectDotNet.Controllers
         public ActionResult getDetail(int? id)
         {
             var jobs = db.Jobs.Where(j => j.id == id.Value);
-            return PartialView(jobs.ToList());
+            return View(jobs.ToList());
         }
     }
 }

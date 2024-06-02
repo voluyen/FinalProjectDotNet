@@ -55,17 +55,19 @@
     </div>
     <!--//banner -->
     <!--/w3_short-->
-    <div class="services-breadcrumb_w3layouts">
-        <div class="inner_breadcrumb">
 
-            <ul class="short_w3ls" _w3ls>
-                <li>@Html.ActionLink("Home", "Home", "Default", new { area = "" }, new { @class = "nav-link" })<span>|</span></li>
-                <li>Professionals</li>
-            </ul>
-        </div>
-    </div>
     @foreach (var i in Model)
     {
+        <div class="services-breadcrumb_w3layouts">
+            <div class="inner_breadcrumb">
+
+                <ul class="short_w3ls" _w3ls>
+                    <li>@Html.ActionLink("Trang chủ", "Home", "Default", new { area = "" }, new { @class = "nav-link" })<span>|</span></li>
+                    <li>@Html.ActionLink("Chuyên gia", "Professionals", "Default", new { area = "" }, new { @class = "nav-link" })<span>|</span></li>
+                    <li>@i.full_name</li>
+                </ul>
+            </div>
+        </div>
         <h2 style="text-align:center">User Profile Card</h2>
         <div class="card">
             <img src="~/Content/img/pf3.jpg" alt="John" style="width:100%">
