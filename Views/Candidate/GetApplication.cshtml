@@ -1,0 +1,56 @@
+﻿@model IEnumerable<FinalProjectDotNet.Models.EF.Application>
+
+@{
+    ViewBag.Title = "GetApplication";
+    Layout = "~/Views/Shared/_ProfileLayout.cshtml";
+}
+
+<h2>GetApplication</h2>
+
+<p>
+    <a href="/Default/Jobs">Nộp đơn xin việc</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            STT
+        </th>
+        <th>
+            Tiêu đề
+        </th>
+        <th>
+            Công ty
+        </th>
+        <th>
+            Thư giới thiệu 
+        </th>
+        <th>
+            Ngày gửi
+        </th>
+        <th></th>
+    </tr>
+    @{ var number = 1;}
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.Raw(number++)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Job.title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Job.Recruiter.company_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cover_letter)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.date)
+        </td>
+        <td>
+            @Html.ActionLink("Details", "Details", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

@@ -365,7 +365,7 @@
     <Compile Include="Areas\admin\Controllers\JobsController.cs" />
     <Compile Include="Areas\admin\Controllers\MenusController.cs" />
     <Compile Include="Areas\admin\Controllers\RecruitersController.cs" />
-    <Compile Include="Controllers\CandidatesController.cs" />
+    <Compile Include="Controllers\CandidateController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DataController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
@@ -378,6 +378,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Application.cs" />
     <Compile Include="Models\EF\AboutU.cs" />
     <Compile Include="Models\EF\Application.cs" />
     <Compile Include="Models\EF\Banner.cs" />
@@ -4350,12 +4351,7 @@
     <Content Include="Views\Jobs\addJob.cshtml" />
     <Content Include="Views\Jobs\getDetail.cshtml" />
     <Content Include="Views\Professionals\getDetail.cshtml" />
-    <Content Include="Views\User\Signup_candidate.cshtml" />
-    <Content Include="Views\User\Signup_Recruiter.cshtml" />
-    <Content Include="Views\User\Login_Recruiter.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
-    <Content Include="Views\User\Login_Candidate.cshtml" />
-    <Content Include="Views\User\Login_NTD.cshtml" />
     <Content Include="Views\Recruiter\Index.cshtml" />
     <Content Include="Views\Shared\_ProfileLayout.cshtml" />
     <Content Include="Views\Candidate\Index.cshtml" />
@@ -4365,6 +4361,12 @@
     <Content Include="Views\Recruiter\Delete.cshtml" />
     <Content Include="Views\Recruiter\Details.cshtml" />
     <Content Include="Views\Events\getDetail.cshtml" />
+    <Content Include="Views\Candidate\Login.cshtml" />
+    <Content Include="Views\Candidate\Signup.cshtml" />
+    <Content Include="Views\Recruiter\Login.cshtml" />
+    <Content Include="Views\Recruiter\Signup.cshtml" />
+    <Content Include="Views\Candidate\GetApplication.cshtml" />
+    <Content Include="Views\Jobs\Apply.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -23,24 +23,19 @@ namespace FinalProjectDotNet.Controllers
         // GET: Recruiter
         public ActionResult Index()
         {
-            Candidate user_candidate = (Candidate)Session["user_candidate"];
-
             Recruiter user_recruiter = (Recruiter)Session["user_recruiter"];
-            if (user_candidate != null)
-            {
-                return View( new { user = user_candidate });
-            }
             if (user_recruiter != null)
             {
                 return View(new {user = user_recruiter });
             }
 
-            return View();
+            return RedirectToAction("Home", "Default");
         }
         public ActionResult GetJob()    
         {
-
             Recruiter user_recruiter = (Recruiter)Session["user_recruiter"];
+            if (user_recruiter == null)
+                return RedirectToAction("Home", "Default");
             var jobs = db.Jobs.Where(j => j.id_recruiter == user_recruiter.id);
 
             return View(jobs.ToList());
@@ -76,7 +71,7 @@ namespace FinalProjectDotNet.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,id_recruiter,title,description,requirements,id_category,location,salary,is_active")] Job job)
+        public ActionResult Create([Bind(Include = "id,title,description,requirements,id_category,location,salary,is_active")] Job job)
         {
             if (ModelState.IsValid)
             {
@@ -117,14 +112,13 @@ namespace FinalProjectDotNet.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,title,description,requirements,id_category,location,salary,date_posted,is_active")] Job job)
+        public ActionResult Edit([Bind(Include = "id,id_recruiter,title,description,requirements,id_category,location,salary,date_posted,is_active")] Job job)
         {
             if (ModelState.IsValid)
             {
-
                 db.Entry(job).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("GetJob");
             }
             ViewBag.id_category = new SelectList(db.Categorys, "id", "name", job.id_category);
             ViewBag.id_recruiter = new SelectList(db.Recruiters, "id", "username", job.id_recruiter);
@@ -167,6 +161,78 @@ namespace FinalProjectDotNet.Controllers
             base.Dispose(disposing);
         }
 
+        public ActionResult Login()
+        {
+            return View();
+        }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Login(Login model)
+        {
+            var user = await db.Recruiters.FirstOrDefaultAsync(u => u.username == model.username);
+
+            if (user == null || passwordHasher.VerifyHashedPassword(user, user.password, model.password) != PasswordVerificationResult.Success)
+            {
+                ModelState.AddModelError("", "Sai username hoặc password.");
+                return View(model);
+            }
+            Session["user_recruiter"] = user;
+            Session["full_name"] = user.full_name;
+            Session["id"] = user.id;
+            return RedirectToAction("Home", "Default");
+        }
+
+        public ActionResult Signup()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Signup(RegisterRecruiter model)
+        {
+            if (ModelState.IsValid)
+            {
+                if (db.Recruiters.Any(r => r.username == model.username))
+                {
+                    ModelState.AddModelError("username", "Username already exists. Please choose a different username.");
+                    return View(model);
+                }
+
+                string avt_path = "/Avatars/avt.png";
+                if (model.avatar_file != null && model.avatar_file.ContentLength > 0)
+                {
+                    string fileName = Path.GetFileName(model.avatar_file.FileName);
+                    string filePath = Path.Combine(Server.MapPath("~/Avatars/"), fileName);
+                    model.avatar_file.SaveAs(filePath);
+                    avt_path = "/Avatars/" + fileName;
+                }
+
+                var recruiter = new Recruiter
+                {
+                    username = model.username,
+                    full_name = model.full_name,
+                    avatar = avt_path,
+                    email = model.email,
+                    date_create = DateTime.Now,
+                    company_name = model.company_name,
+                    phone = model.phone_number,
+                    address = model.address,
+                    website = model.website
+                };
+                recruiter.password = passwordHasher.HashPassword(recruiter, model.password);
+                db.Recruiters.Add(recruiter);
+                await db.SaveChangesAsync();
+                return RedirectToAction("Login");
+            }
+
+            return View(model);
+        }
+        public ActionResult Logout()
+        {
+            Session.Abandon();
+            return RedirectToAction("Index", "User");
+        }
     }
 }

@@ -96,8 +96,16 @@
             <input type="submit" value="Đăng ký" class="btn btn-primary" />
         </div>
     </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            Bạn đã có tài khoản đăng nhập?  <a href="/Recruiter/Login">Đăng nhập</a>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        </div>
+    </div>
 }
 
-@Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-"Bạn đã có tài khoản đăng nhập?"<a href="/Recruiter/Login"></a>

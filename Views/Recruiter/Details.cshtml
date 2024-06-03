@@ -9,7 +9,7 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Category.name)
+            Ngành 
         </dt>
 
         <dd>
@@ -18,7 +18,7 @@
 
 
         <dt>
-            @Html.DisplayNameFor(model => model.VietnamProvince.ProvinceName)
+            Địa điểm
         </dt>
 
         <dd>
@@ -26,7 +26,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.title)
+            Tiêu đề
         </dt>
 
         <dd>
@@ -34,7 +34,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.description)
+            Mô tả công việc
         </dt>
 
         <dd>
@@ -42,7 +42,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.requirements)
+            Yêu cầu
         </dt>
 
         <dd>
@@ -50,7 +50,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.salary)
+            Mức lương
         </dt>
 
         <dd>
@@ -58,7 +58,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.date_posted)
+            Ngày đăng
         </dt>
 
         <dd>
@@ -66,11 +66,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.is_active)
+            Trạng thái
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.is_active)
+            @(Model.is_active ? "Đang tuyển dụng" : "Hết hạn")
         </dd>
 
     </dl>

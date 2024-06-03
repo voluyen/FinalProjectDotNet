@@ -5,36 +5,36 @@
     Layout = "~/Views/Shared/_ProfileLayout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Tin tuyển dụng</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Đăng tin tuyển dụng", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Category.name)
+            Ngành
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.VietnamProvince.ProvinceName)
+            Địa điểm
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.title)
+            Tiêu đề
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.description)
+            Mô tả công việc
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.requirements)
+            Yêu cầu
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.salary)
+            Mức lương
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.date_posted)
+            Ngày đăng
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.is_active)
+            Trạng thái
         </th>
         <th></th>
     </tr>
@@ -64,7 +64,7 @@
                 @Html.DisplayFor(modelItem => item.date_posted)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.is_active)
+                @(item.is_active ? "Đang tuyển dụng" : "Hết hạn")
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.id }) |

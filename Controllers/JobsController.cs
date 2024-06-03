@@ -53,5 +53,18 @@ namespace FinalProjectDotNet.Controllers
             var jobs = db.Jobs.Where(j => j.id == id.Value);
             return View(jobs.ToList());
         }
+
+        public ActionResult Apply(int? id)
+		{
+            Candidate user_candidate = (Candidate)Session["user_candidate"];
+            return View(user_candidate);
+		}
+
+        //[HttpPost]
+        //public ActionResult Apply(int? id)
+        //{
+        //    Candidate user_candidate = (Candidate)Session["user_candidate"];
+        //    return View(user_candidate);
+        //}
     }
 }

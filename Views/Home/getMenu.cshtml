@@ -11,28 +11,27 @@
 
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    User
+                    Tài khoản của tôi
                 </a>
 
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     @if (Session["user_recruiter"] != null)
                     {
-                        @Html.ActionLink("My profile", "Index", "Recruiter", null, new { @class = "dropdown-item", style = " color: black; display: block; padding: 0.5rem 1rem;" })
-                        @Html.ActionLink("My Job", "#", "#", null, new { @class = "dropdown-item", style = "color: black; display: block; padding: 0.5rem 1rem;" })
-                        @Html.ActionLink("Logout", "Logout", "User", null, new { @class = "dropdown-item", style = "color: black; display: block; padding: 0.5rem 1rem;" })
+                        @Html.ActionLink("Thông tin", "Index", "Recruiter", null, new { @class = "dropdown-item", style = " color: black; display: block; padding: 0.5rem 1rem;" })
+                        @Html.ActionLink("Việc làm", "GetJob", "Recruiter", null, new { @class = "dropdown-item", style = "color: black; display: block; padding: 0.5rem 1rem;" })
+                        @Html.ActionLink("Đăng xuất", "Logout", "Candidate", null, new { @class = "dropdown-item", style = "color: black; display: block; padding: 0.5rem 1rem;" })
                     }
                     else
                     {
                         if (Session["user_candidate"] != null)
                         {
-                            @Html.ActionLink("My profile", "Index", "Candidate", null, new { @class = "dropdown-item", style = " color: black; display: block; padding: 0.5rem 1rem;" })
-                            @Html.ActionLink("My Job", "#", "#", null, new { @class = "dropdown-item", style = "color: black; display: block; padding: 0.5rem 1rem;" })
-                            @Html.ActionLink("Logout", "Logout", "User", null, new { @class = "dropdown-item", style = "color: black; display: block; padding: 0.5rem 1rem;" }) 
+                            @Html.ActionLink("Tài khoản", "Index", "Candidate", null, new { @class = "dropdown-item", style = " color: black; display: block; padding: 0.5rem 1rem;" })
+                            @Html.ActionLink("Việc làm", "GetApplication", "Candidate", null, new { @class = "dropdown-item", style = "color: black; display: block; padding: 0.5rem 1rem;" })
+                            @Html.ActionLink("Đăng xuất", "Logout", "Recruiter", null, new { @class = "dropdown-item", style = "color: black; display: block; padding: 0.5rem 1rem;" }) 
                         }
                         else
                         {
                             @Html.ActionLink("Login", "Index", "User", null, new { @class = "effect-3 dropdown-item", style = "color: black; display: block; padding: 0.5rem 1rem;" })
-                            @Html.ActionLink("Signup", "Index", "User", null, new { @class = "effect-3 dropdown-item", style = "color: black; display: block; padding: 0.5rem 1rem;" })
                         }
                     }
 
