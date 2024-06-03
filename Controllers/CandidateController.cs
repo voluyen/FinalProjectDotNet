@@ -63,6 +63,10 @@ namespace FinalProjectDotNet.Controllers
 
         public ActionResult Signup()
         {
+            var location_name = (from t in db.VietnamProvinces select t).ToList();
+
+            ViewBag.location_name = new SelectList(location_name, "ProvinceID", "ProvinceName");
+
             return View();
         }
 

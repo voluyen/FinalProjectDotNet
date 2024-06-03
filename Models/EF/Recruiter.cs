@@ -40,11 +40,13 @@ namespace FinalProjectDotNet.Models.EF
         [StringLength(50)]
         public string phone { get; set; }
 
-        public string address { get; set; }
+        public int? address { get; set; }
 
         public string website { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Job> Jobs { get; set; }
+
+        public virtual VietnamProvince VietnamProvince { get; set; }
     }
 }

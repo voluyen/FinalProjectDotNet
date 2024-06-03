@@ -1,8 +1,11 @@
-﻿using System;
+﻿using FinalProjectDotNet.Models.EF;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace FinalProjectDotNet.Models
 {
@@ -27,7 +30,7 @@ namespace FinalProjectDotNet.Models
 
         [Required]
         [DataType(DataType.Password)]
-        [Compare("password", ErrorMessage = "The password and confirmation password do not match.")]
+        [System.ComponentModel.DataAnnotations.Compare("password", ErrorMessage = "The password and confirmation password do not match.")]
         public string confirm_password { get; set; }
 
         [DataType(DataType.Upload)]
@@ -37,10 +40,13 @@ namespace FinalProjectDotNet.Models
 
         public string phone_number { get; set; }
 
-        public string address { get; set; }
+        [Required]
+        public int address { get; set; }
 
         public string company_name { get; set; }
 
         public string website { get; set; }
+
+        //public IEnumerable<SelectListItem> Provinces { get; set; }
     }
 }

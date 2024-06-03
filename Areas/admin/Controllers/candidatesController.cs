@@ -45,6 +45,7 @@ namespace FinalProjectDotNet.Areas.admin.Controllers
         // GET: admin/Candidates/Create
         public ActionResult Create()
         {
+            ViewBag.address = new SelectList(db.VietnamProvinces, "ProvinceID", "ProvinceName");
             return View();
         }
 
@@ -92,6 +93,7 @@ namespace FinalProjectDotNet.Areas.admin.Controllers
                 candidate.password = passwordHasher.HashPassword(candidate, model.password);
                 db.Candidates.Add(candidate);
                 await db.SaveChangesAsync();
+                ViewBag.address = new SelectList(db.VietnamProvinces, "ProvinceID", "ProvinceName", candidate.address);
                 return RedirectToAction("Index");
             }
 
@@ -110,6 +112,7 @@ namespace FinalProjectDotNet.Areas.admin.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.address = new SelectList(db.VietnamProvinces, "ProvinceID", "ProvinceName", candidate.address);
             return View(candidate);
         }
 
@@ -126,6 +129,7 @@ namespace FinalProjectDotNet.Areas.admin.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.address = new SelectList(db.VietnamProvinces, "ProvinceID", "ProvinceName", candidate.address);
             return View(candidate);
         }
 

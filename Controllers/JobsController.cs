@@ -1,10 +1,14 @@
 ﻿
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using FinalProjectDotNet.Models.EF;
+using FinalProjectDotNet.Models;
+using System.Threading.Tasks;
+
 namespace FinalProjectDotNet.Controllers
 {
     public class JobsController : Controller
@@ -57,14 +61,39 @@ namespace FinalProjectDotNet.Controllers
         public ActionResult Apply(int? id)
 		{
             Candidate user_candidate = (Candidate)Session["user_candidate"];
-            return View(user_candidate);
+            Application2 application = new Application2();
+            application.candidate_id = user_candidate.id;
+            application.job_id = (int)id;
+            return View(application);
 		}
 
-        //[HttpPost]
-        //public ActionResult Apply(int? id)
-        //{
-        //    Candidate user_candidate = (Candidate)Session["user_candidate"];
-        //    return View(user_candidate);
-        //}
-    }
+		[HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Apply(Application2 model)
+		{
+            if (ModelState.IsValid)
+            {
+                string cover_letter_path = "";
+                if (model.cover_letter != null && model.cover_letter.ContentLength > 0)
+                {
+                    string fileName = Path.GetFileName(model.cover_letter.FileName);
+                    string filePath = Path.Combine(Server.MapPath("~/Resume/"), fileName);
+                    model.cover_letter.SaveAs(filePath);
+                    cover_letter_path = filePath;
+                }
+                var application = new Application
+                {
+                    candidate_id = model.candidate_id,
+                    job_id = model.job_id,
+                    cover_letter = cover_letter_path,
+                    date = DateTime.Now
+
+                };
+                db.Applications.Add(application);
+                await db.SaveChangesAsync();
+                return RedirectToAction("Index");
+            }
+            return View(model);
+        }
+	}
 }

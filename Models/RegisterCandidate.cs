@@ -1,6 +1,8 @@
 ﻿using System.Web;
 using System.ComponentModel.DataAnnotations;
 using System;
+using FinalProjectDotNet.Models.EF;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FinalProjectDotNet.Models
 {
@@ -33,8 +35,9 @@ namespace FinalProjectDotNet.Models
         public DateTime birthdate { get; set; }
 
         public string phone_number { get; set; }
-
-        public string address { get; set; }
+        
+        [Required]
+        public int address { get; set; }
 
         [DataType(DataType.Upload)]
         public HttpPostedFileBase resume { get; set; }

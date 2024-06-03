@@ -35,7 +35,7 @@ namespace FinalProjectDotNet.Models.EF
         [StringLength(50)]
         public string phone_number { get; set; }
 
-        public string address { get; set; }
+        public int? address { get; set; }
 
         public string resume { get; set; }
 
@@ -44,5 +44,7 @@ namespace FinalProjectDotNet.Models.EF
         public string experience { get; set; }
 
         public virtual Application Application { get; set; }
+
+        public virtual VietnamProvince VietnamProvince { get; set; }
     }
 }

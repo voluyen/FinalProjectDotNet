@@ -59,10 +59,20 @@ namespace FinalProjectDotNet.Models.EF
 				.WillCascadeOnDelete(false);
 
 			modelBuilder.Entity<VietnamProvince>()
+				.HasMany(e => e.Candidates)
+				.WithOptional(e => e.VietnamProvince)
+				.HasForeignKey(e => e.address);
+
+			modelBuilder.Entity<VietnamProvince>()
 				.HasMany(e => e.Jobs)
 				.WithRequired(e => e.VietnamProvince)
 				.HasForeignKey(e => e.location)
 				.WillCascadeOnDelete(false);
+
+			modelBuilder.Entity<VietnamProvince>()
+				.HasMany(e => e.Recruiters)
+				.WithOptional(e => e.VietnamProvince)
+				.HasForeignKey(e => e.address);
 		}
 	}
 }

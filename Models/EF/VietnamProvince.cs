@@ -11,7 +11,9 @@ namespace FinalProjectDotNet.Models.EF
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public VietnamProvince()
         {
+            Candidates = new HashSet<Candidate>();
             Jobs = new HashSet<Job>();
+            Recruiters = new HashSet<Recruiter>();
         }
 
         [Key]
@@ -23,6 +25,12 @@ namespace FinalProjectDotNet.Models.EF
         public string ProvinceName { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Candidate> Candidates { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Job> Jobs { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Recruiter> Recruiters { get; set; }
     }
 }
